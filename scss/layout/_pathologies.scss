@@ -1,0 +1,406 @@
+@use '../abstracts/variables' as *;
+
+// Section top Figma ≈ 5205px
+// Positions relatives = Figma top − 5205
+
+.pathologies {
+  position: relative;
+  background-color: #F4F4F4;
+  width: 100%;
+  min-height: 799px;
+  margin-top: -165px;
+  overflow: visible;
+
+  // ── Déco fil de fer (top-right, opacity 10%) ─────────────
+  // Figma: Group 8 — 274.79×837px, left 1150px, rotation -180°, opacity 10%
+  &__deco {
+    position: absolute;
+    top: 0;
+    left: 1150px;
+    width: 275px;
+    height: 837px;
+    opacity: 0.9;
+    transform: rotate(-180deg);
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // ── H2 ──────────────────────────────────────────────────
+  &__title {
+    position: absolute;
+    top: 208px;         // Figma: 5413 − 5205
+    left: 415px;
+    width: 606px;
+    text-align: center;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 70px;
+    line-height: 70px;
+    color: #000000;
+    margin: 0;
+    z-index: 2;
+  }
+
+  // ── Subtitle ─────────────────────────────────────────────
+  &__subtitle {
+    position: absolute;
+    top: 300px;
+    left: 211px;
+    width: 1013px;
+    text-align: center;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000000;
+    margin: 0;
+    z-index: 2;
+
+    &--light { font-weight: $fw-light; }
+  }
+
+  // ── CTA ─────────────────────────────────────────────────
+  &__cta {
+    position: absolute;
+    top: 368px;
+    left: 627px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    z-index: 2;
+  }
+
+  &__cta-circle {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid $color-red;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__cta-text {
+    margin-left: -20px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #F4F4F4;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  // ── Grille 3 cartes ──────────────────────────────────────
+  &__grid {
+    position: absolute;
+    top: 456px;
+    left: 99px;
+    width: 1236px;
+    display: flex;
+    z-index: 3;
+  }
+
+  // ── Carte ────────────────────────────────────────────────
+  &__card {
+    position: relative;
+    flex: 1;
+    height: 570px;      // Figma: 570.3px
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .pathologies__card-overlay { opacity: 1; }
+    &:hover .pathologies__card-label   { opacity: 0; }
+  }
+
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  // Fondu bas par défaut
+  &__card-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.85));
+    pointer-events: none;
+  }
+
+  // Label visible par défaut — Figma: Gilroy 800, 23px, letter-spacing 10%, Uppercase
+  &__card-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 23px;        // Figma: 23px
+    line-height: 1;
+    letter-spacing: 0.10em; // Figma: 10%
+    text-transform: uppercase;
+    color: #000000;         // Figma: #000000
+    text-align: center;
+    transition: opacity 0.3s ease;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 109px;
+      height: 4px;
+      background-color: $color-red;
+      margin: 24px auto 0;
+    }
+  }
+
+  // Overlay hover
+  &__card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 66px 28px 62px;  // titre à ~66px du top (Figma: 555-490)
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  // Titre overlay — Figma: Gilroy 800, 23px, letter-spacing 10%, Uppercase, #FFFFFF
+  &__card-title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 23px;        // Figma: 23px
+    line-height: 1;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 24px;
+    left: 4px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 109px;
+      height: 4px;
+      background-color: $color-red;
+      margin: 12px auto 0;
+      position: relative;
+      top: 12px;
+      left: -2px;
+    }
+  }
+
+  // Body texte overlay — Figma: Gilroy 300, 15px, 25px lh, center, #FFFFFF
+  &__card-text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;        // Figma: 15px
+    line-height: 25px;      // Figma: 25px
+    color: $color-white;
+    text-align: center;
+    margin: 98px auto 0;
+    flex: 1;
+    width: 270px;
+
+    & + & {
+      margin-top: -50px;
+      width: 240px;
+    }
+  }
+
+  // Carte CHEVILLE — overlay toujours visible
+  &__card--cheville {
+    .pathologies__card-overlay { opacity: 1; }
+    .pathologies__card-label   { opacity: 0; }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    min-height: auto;
+    margin-top: 0;
+    padding: 50px 0 60px;
+
+    &__deco { display: none; }
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 50px;
+      line-height: 1.1;
+      text-align: center;
+      padding: 0 32px;
+    }
+
+    &__subtitle {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      padding: 16px 32px 0;
+      text-align: center;
+    }
+
+    &__cta {
+      position: relative;
+      top: auto; left: auto;
+      justify-content: center;
+      margin: 24px auto 0;
+    }
+
+    &__grid {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      flex-direction: row;
+      gap: 0;
+      margin-top: 40px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 32px;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 70% !important;
+      height: 420px;
+      flex: none;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      margin-right: 16px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    min-height: auto;
+    margin-top: 0;
+    padding: 50px 0 40px;
+
+    &__deco { display: none; }
+
+    &__title {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      font-size: 36px;
+      line-height: 1.1;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    &__subtitle {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      padding: 16px 24px 0;
+      text-align: center;
+    }
+
+    &__cta {
+      position: relative;
+      top: auto;
+      left: auto;
+      justify-content: center;
+      margin: 20px auto 0;
+    }
+
+    &__grid {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
+      margin-top: 30px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 24px;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 85% !important;
+      height: 340px;
+      flex: none;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      margin-right: 12px;
+    }
+
+    &__dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding-bottom: 10px;
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.25);
+      transition: background-color 0.3s ease;
+
+      &--active {
+        background-color: $color-red;
+      }
+    }
+  }
+  // Lien overlay — Figma: Gilroy 800, 16px, 25px lh, letter-spacing 10%, Uppercase, #FFFFFF
+  &__card-link {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;        // Figma: 16px
+    line-height: 25px;      // Figma: 25px
+    letter-spacing: 0.10em; // Figma: 10%
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    top: -11px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 187.24px;
+      height: 2px;
+      background-color: $color-red;
+      margin: 0 auto 0;
+    }
+  }
+}
+
+// Desktop : masquer les dots
+.pathologies__dots {
+  display: none;
+}

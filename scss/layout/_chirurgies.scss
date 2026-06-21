@@ -1,0 +1,429 @@
+@use '../abstracts/variables' as *;
+
+.chirurgies {
+  background-color: $color-black;
+  width: 100%;
+  position: relative;
+  margin-top: 24px;
+  padding-bottom: 80px;
+  overflow: hidden;
+
+  // ── Déco gauche (Vector@2x / carré rouge) ───────────────
+  &__deco {
+    position: absolute;
+    top: 12px;           // 37 − 25 (Pixel Pro)
+    left: -58px;         // −110 + 52 (Pixel Pro)
+    width: 520px;
+    height: 520px;
+    border: 1px solid $color-red;
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  &__deco-cross {
+    position: absolute;
+    top: 12px;
+    left: -58px;
+    width: 520px;
+    height: 520px;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // ── H1 ──────────────────────────────────────────────────
+  &__title {
+    position: relative;
+    margin: 0;
+    padding-top: 117px;  // Figma: H1 top 2475 - section top 2358 = 117px
+    padding-left: 257px; // Figma: left 257px
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 70px;     // Figma: 70px
+    line-height: 1;      // Figma: 100%
+    letter-spacing: 0;
+    color: $color-white;
+  }
+
+  // ── Sous-titre ───────────────────────────────────────────
+  &__subtitle {
+    margin: 0;
+    margin-top: 23px;    // Figma: 2543 - 2475 - 45 = 23px
+    margin-left: 455px;  // Figma: left 455px
+    width: 757px;        // Figma: 757px
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;     // Figma: 16px
+    line-height: 25px;   // Figma: 25px
+    color: $color-white;
+
+    &--light {
+      font-weight: $fw-light;
+    }
+  }
+
+  // ── CTA ─────────────────────────────────────────────────
+  &__cta {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 455px;  // Figma: left 455px
+    color: $color-white;
+    text-decoration: none;
+    width: 224px;
+    height: 65px;
+  }
+
+  &__cta-circle {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid $color-red;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__cta-text {
+    margin-left: -25px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: nowrap;
+    background-color: $color-black;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+  }
+
+  // ── Grille 3 cartes ──────────────────────────────────────
+  &__grid {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 32px;    // 50 − 18 (Pixel Pro)
+    padding-left: 100px;
+    gap: 30px;
+  }
+
+  // ── Carte ────────────────────────────────────────────────
+  &__card {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.70); // Figma drop shadow
+
+    &--genou   { width: 396px; height: 543px; }
+    &--cheville{ width: 396px; height: 543px; }
+    &--pied    { width: 397px; height: 543px; margin-left: -9px; }
+
+    // Au hover : overlay visible
+    &:hover .chirurgies__card-overlay {
+      opacity: 1;
+    }
+    &:hover .chirurgies__card-label {
+      opacity: 0;
+    }
+  }
+
+  // TEMP — force l'état hover sur la carte "pied" pour calage Pixel Perfect
+  // À retirer une fois les ajustements terminés
+  &__card--pied {
+    .chirurgies__card-overlay { opacity: 1 !important; }
+    .chirurgies__card-label { opacity: 0 !important; }
+    .chirurgies__card-plus { opacity: 1 !important; }
+  }
+
+  &__card-clip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  // Fondu noir en bas (défaut)
+  &__card-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, #000000);
+    pointer-events: none;
+  }
+
+  // Label visible par défaut
+  &__card-label {
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    transform: translateX(-2px);
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 23px;
+    line-height: 1;
+    letter-spacing: 0.10em;
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 12px;
+    transition: opacity 0.3s ease;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: $color-red;
+      margin: 23px auto 0;
+    }
+  }
+
+  // Overlay visible au hover
+  &__card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 30px 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+  }
+
+  &__card-plus {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+
+    &--tl { top: -17px;  left: -18px;  }
+    &--br { bottom: -18px; right: -18px; }
+  }
+
+  &__card:hover &__card-plus {
+    opacity: 1;
+  }
+
+  &__card-title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 23px;
+    line-height: 1;
+    letter-spacing: 0.10em;
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 0 12px;
+    position: relative;
+    top: 48px;
+    left: 2px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background-color: $color-red;
+      margin: 10px auto 0;
+    }
+  }
+
+  &__card-text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: $color-white;
+    text-align: center;
+    width: 308px;
+    margin: 16px auto 0;
+    flex: 1;
+    position: relative;
+    top: 52px;
+  }
+
+  &__card-link {
+    display: block;
+    width: 310px;
+    height: 39px;
+    margin: auto auto 0;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.10em;
+    vertical-align: middle;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    top: -20px;
+    left: 2px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 141px;
+      height: 2px;
+      background-color: $color-red;
+      margin: -1px auto 0;
+      transform: translateX(-2px);
+    }
+  }
+
+  // ── Line 84 (trait rouge bas) ────────────────────────────
+  &__line {
+    position: absolute;
+    bottom: 40px;
+    left: 249px;         // Figma: left 249px
+    width: 4px;          // border 4px
+    height: 100px;       // Figma: width 100px (rotation 90°)
+    background-color: $color-red;
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    padding-bottom: 60px;
+
+    &__deco,
+    &__deco-cross,
+    &__line { display: none; }
+
+    &__title {
+      padding-top: 60px;
+      padding-left: 32px;
+      font-size: 50px;
+    }
+
+    &__subtitle {
+      margin-top: 16px;
+      margin-left: 32px;
+      width: calc(100% - 64px);
+    }
+
+    &__cta {
+      margin-top: 24px;
+      margin-left: 32px;
+    }
+
+    &__grid {
+      flex-direction: row;
+      align-items: stretch;
+      padding-left: 32px;
+      margin-top: 40px;
+      gap: 16px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-right: 32px;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 70% !important;
+      height: 460px !important;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    margin-top: 0;
+    padding-bottom: 40px;
+
+    &__deco,
+    &__deco-cross,
+    &__line { display: none; }
+
+    &__title {
+      padding-top: 50px;
+      padding-left: 24px;
+      font-size: 36px;
+    }
+
+    &__subtitle {
+      margin-top: 16px;
+      margin-left: 24px;
+      width: calc(100% - 48px);
+    }
+
+    &__cta {
+      margin-top: 20px;
+      margin-left: 24px;
+    }
+
+    &__grid {
+      flex-direction: row;
+      align-items: stretch;
+      padding-left: 24px;
+      margin-top: 30px;
+      gap: 12px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-right: 24px;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 85% !important;
+      height: 380px !important;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
+    &__dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding-bottom: 10px;
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.35);
+      transition: background-color 0.3s ease;
+
+      &--active {
+        background-color: $color-red;
+      }
+    }
+  }
+}
+
+// Desktop : masquer les dots
+.chirurgies__dots {
+  display: none;
+}

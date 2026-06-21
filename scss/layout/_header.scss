@@ -1,0 +1,356 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;         // Figma: 81px
+  background-color: $color-black; // Figma: #020202
+  z-index: 100;
+
+  &__inner {
+    @include flex-between;
+    height: 100%;
+    max-width: $container-max;    // 1440px
+    margin: 0 auto;
+    padding: 0 20px 0 27.5px;    // Figma: left icon à 27.5px, CTA se termine à 1420px
+    position: relative;
+  }
+
+  // ── Gauche : icône menu + téléphone ──────────────────────
+  &__left {
+    // pas de position: relative → __menu-btn et __phone sont relatifs à __inner
+  }
+
+  &__menu-btn {
+    position: absolute;
+    top: 8px;
+    left: 28px;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    background: none;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:focus-visible {
+      outline: 2px solid $color-white;
+      outline-offset: 4px;
+    }
+  }
+
+  &__icon-menu {
+    width: 49.5px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  &__menu-label {
+    position: absolute;
+    top: 12px;   // 20 (Figma) − 8 (btn top from inner)
+    left: 42px;  // 70 (Figma) − 28 (btn left from inner)
+    width: 66px;
+    height: 37px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 37px;
+    letter-spacing: 0;
+    color: $color-white;
+    white-space: nowrap;
+  }
+
+  &__phone {
+    position: absolute;
+    top: 28px;
+    left: 155px;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2px;
+    gap: 10px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 25px;
+    color: $color-white;
+    white-space: nowrap;
+  }
+
+  &__phone-num {
+    margin-top: -3px;
+  }
+
+  // ── Tagline lettre par lettre (positions Figma absolues) ──
+  &__tagline {
+    position: absolute;
+    top: 25px;
+    left: 520px;
+  }
+
+  &__tagline-letter {
+    position: absolute;
+    display: block;
+    max-width: none;
+  }
+
+  // ── Centre : logo ─────────────────────────────────────────
+  &__logo {
+    position: absolute;
+    left: 520px;
+    top: 29.21px;
+    width: 400px;
+    display: block;
+    text-decoration: none;
+  }
+
+  &__logo-build {
+    position: relative;
+    width: 400px;
+    height: 55.18px;
+  }
+
+  &__logo-letter {
+    position: absolute;
+    display: block;
+
+    &--i {
+      top: 0;
+      left: 22.11px;
+      width: 5.87px;
+      height: 40.27px;
+    }
+
+    &--plus {
+      top: 10.32px;   // Figma 37.53 − 27.21
+      left: 19.27px;  // Figma 539.27 − 520
+      width: 20.47px;
+      height: 20.63px;
+    }
+
+    &--gcp {
+      top: 0;
+      left: 29.43px;
+      width: 112.55px;
+      height: 47.40px;
+    }
+
+    &--c2 {
+      top: 0;
+      left: 64.71px;
+      width: 33.76px;
+      height: 16.72px;
+    }
+
+    &--traitv {
+      top: 1.12px;
+      left: 147.42px;
+      width: 1px;
+      height: 39.16px;
+    }
+
+    &--d {
+      top: 1.49px;
+      left: 161.28px;
+      width: 16.27px;
+      height: 17.79px;
+    }
+
+    &--r {
+      top: 1.49px;
+      left: 181px;
+      width: 15.26px;
+      height: 17.78px;
+    }
+
+    &--red {
+      top: 23.84px;
+      left: 161.28px;
+      width: 34.98px;
+      height: 5.97px;
+    }
+
+    &--p {
+      top: 1.39px;
+      left: 205.95px;
+      width: 29.44px;
+      height: 37.49px;
+    }
+
+    &--o {
+      top: 0.76px;
+      left: 239.8px;
+      width: 39.53px;
+      height: 38.76px;
+    }
+
+    &--l1 {
+      top: 1.39px;
+      left: 286.62px;
+      width: 26.73px;
+      height: 37.49px;
+    }
+
+    &--l2 {
+      top: 1.39px;
+      left: 319.51px;
+      width: 26.73px;
+      height: 37.49px;
+    }
+
+    &--e {
+      top: 1.39px;
+      left: 352.4px;
+      width: 28.32px;
+      height: 37.49px;
+    }
+  }
+
+  &__logo-trait {
+    position: absolute;
+    top: 52.18px;
+    left: 0;
+    width: 400px;
+    height: 1px;
+    display: block;
+  }
+
+  // ── Droite : search + CTA ────────────────────────────────
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 19px; // Figma: CTA left(1186) - search right(1114+53=1167) = 19px
+  }
+
+  &__search-btn {
+    @include flex-center;
+    width: 53px;               // Figma: 53px
+    height: 53px;              // Figma: 53px
+    border-radius: 100px;      // Figma: 100px
+    background-color: $color-red; // Figma: #B40400
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__cta {
+    @include flex-center;
+    width: 234px;              // Figma: 234px
+    height: 53px;              // Figma: 53px
+    border-radius: 100px;      // Figma: 100px
+    border: 1.5px solid $color-white; // Figma: 1.5px #FFFFFF
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;           // Figma: 15px
+    line-height: 1;
+    letter-spacing: 0.23em;    // Figma: 23%
+    color: $color-white;
+    text-transform: uppercase;
+    background: transparent;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    &__logo {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+    }
+
+    &__logo-img { width: 300px; }
+
+    &__cta { display: none; }
+
+    &__right {
+      gap: 12px;
+    }
+  }
+
+  &__vector6 {
+    position: absolute;
+    top: 41px;
+    left: 1398.5px;
+    width: 41px;
+    height: 0;
+    border-top: 1.5px solid $color-red;
+    display: block;
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    height: 73px;
+    overflow: visible;
+
+    &__inner {
+      display: block;
+      position: relative;
+      height: 73px;
+      padding: 0;
+      overflow: visible;
+    }
+
+    // Burger à gauche
+    &__left {
+      position: absolute;
+      left: 19px;
+      top: 50%;
+      transform: translateY(calc(-50% - 3px));
+    }
+
+    &__menu-btn {
+      position: static;
+      transform: none;
+      display: flex;
+      align-items: center;
+    }
+
+    &__menu-label { display: none; }
+
+    &__icon-menu {
+      width: 34px;
+      height: 34px;
+    }
+
+    &__phone { display: none; }
+
+    // Logo centré
+    &__logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-50% + 9px), -50%);
+      width: 183px;
+      display: block;
+    }
+
+    &__logo-img {
+      width: 183px;
+      height: 24px;
+      max-width: none;
+      border-bottom: none;
+      object-fit: contain;
+    }
+
+    &__tagline { display: none; }
+
+    &__cta  { display: none; }
+    &__right { display: none; }
+    &__vector6 { display: none; }
+  }
+}

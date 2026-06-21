@@ -1,0 +1,180 @@
+@use '../abstracts/variables' as *;
+
+// ── Traits verticaux rouges décoratifs (page-absolute) ─────
+.deco-traits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco-trait {
+  position: absolute;
+  width: 1px;
+  background-color: $color-red;
+
+  &--1 { top: 938px;  left: 410px;   height: 132px; }
+  &--2 { top: 1515.5px; left: 408.5px; height: 67px; }
+  &--3 { top: 1526.5px; left: 1031px; height: 67px; }
+  &--4 { top: 1992px;   left: 1031px; height: 260px; }
+}
+
+.team {
+  background-color: $color-black;
+  width: 100%;
+  padding-top: 84px;
+  padding-bottom: 60px;
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 101px; // Figma: image left 101px
+  }
+
+  // ── Image chirurgiens ────────────────────────────────────
+  &__image {
+    position: relative;
+    z-index: 2;
+    width: 623px;        // Figma: 623px
+    height: 462px;       // Figma: 462px
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  // ── Bloc texte ───────────────────────────────────────────
+  &__content {
+    margin-left: 65px;   // Figma: 789 - (101+623) = 65px
+    margin-top: 17px;    // Figma: 1071 - 1054 = 17px
+    width: 555px;        // Figma: 555px
+  }
+
+  // ── H2 ──────────────────────────────────────────────────
+  &__title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 40px;     // Figma: 40px
+    line-height: 45px;   // Figma: 45px
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 20px;
+
+    &--red {
+      color: $color-red; // Figma: "votre santé" en #B40400
+    }
+  }
+
+  // ── Sous-titre bold ──────────────────────────────────────
+  &__subtitle {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 18px;     // Figma: 18px
+    line-height: 25px;   // Figma: 25px
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 10px;    // Figma: paragraph spacing 10px
+    position: relative;
+    top: -5px;
+  }
+
+  // ── Body text ────────────────────────────────────────────
+  &__text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 10px;
+    position: relative;
+    top: -5px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  // ── CTA "En savoir plus →" ───────────────────────────────
+  &__cta {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: 224px;        // Figma: 224px
+    height: 65px;        // Figma: 65px
+    color: $color-white;
+    text-decoration: none;
+    position: relative;
+  }
+
+  &__cta-circle {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid $color-red;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__cta-text {
+    margin-left: -22px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: nowrap;
+    background-color: $color-black;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+    &__inner {
+      flex-direction: column-reverse;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 360px;
+    }
+
+    &__content {
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__inner {
+      flex-direction: column-reverse;
+      padding-left: 0;
+    }
+
+    &__image {
+      width: 100%;
+      height: 260px;
+    }
+
+    &__content {
+      margin-left: 0;
+      margin-top: 30px;
+      width: 100%;
+      padding: 0 24px;
+    }
+
+    &__title { font-size: 28px; line-height: 1.2; }
+  }
+}

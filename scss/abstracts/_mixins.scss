@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+@mixin respond-to($bp) {
+  @if $bp == 'mobile' {
+    @media (max-width: #{$bp-mobile}) { @content; }
+  } @else if $bp == 'tablet' {
+    @media (max-width: #{$bp-tablet}) { @content; }
+  } @else if $bp == 'desktop' {
+    @media (max-width: #{$bp-desktop}) { @content; }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

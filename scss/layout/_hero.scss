@@ -1,0 +1,314 @@
+@use '../abstracts/variables' as *;
+
+// ── Bouton fixe "Prendre rendez-vous" ───────────────────────
+.rdv-btn {
+  position: absolute;
+  top: 654px;
+  left: 1323px;
+  width: 87px;
+  height: 92px;
+  z-index: 10;
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: $bp-mobile) {
+    display: none;
+  }
+}
+
+// Les coordonnées Figma sont relatives au frame complet (header inclus à 81px).
+// Le hero démarre SOUS le header → on soustrait $header-height (81px) de chaque top Figma.
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 739px;          // bone bottom: (131+689) - 81 = 739px
+  background-color: $color-black;
+  overflow: hidden;
+
+  // ── H1 ──────────────────────────────────────────────────
+  &__title {
+    position: absolute;
+    top: 189px;
+    left: 100px;
+    width: 780px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 50px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: $color-white;
+  }
+
+  // ── Sous-titre ──────────────────────────────────────────
+  &__subtitle {
+    position: absolute;
+    top: 259px;
+    left: 100px;
+    width: 748px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.10em;
+    color: $color-white;
+    text-transform: uppercase;
+  }
+
+  // ── Trait rouge ─────────────────────────────────────────
+  &__line {
+    position: absolute;
+    top: 310px;
+    left: 101px;
+    width: 90px;
+    height: 0;
+    border-top: 4px solid $color-red;
+    display: block;
+  }
+
+  // ── Body text ───────────────────────────────────────────
+  &__text {
+    position: absolute;
+    top: 338px;
+    left: 100px;
+    width: 525px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0;
+    color: $color-white;
+  }
+
+  // ── CTA "En savoir plus →" ──────────────────────────────
+  &__cta {
+    position: absolute;
+    top: 466px;
+    left: 101px;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    text-decoration: none;
+    height: 65px;
+  }
+
+  &__cta-circle {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid $color-red;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__cta-text {
+    margin-left: -25px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 18px;
+    line-height: 1;
+    white-space: nowrap;
+    background-color: $color-black;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__cta-arrow {
+    height: 14px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    left: -5px;
+    top: 2px;
+  }
+
+  // ── Croix blanche (Vector) ──────────────────────────────
+  &__deco-cross {
+    position: absolute;
+    top: 33px;            // Figma 114 − 81
+    left: 1055px;         // 1085 − 30 (Pixel Pro offset)
+    width: 415px;
+    height: 415px;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // ── Mask Group (3) ──────────────────────────────────────
+  &__mask {
+    position: absolute;
+    top: 46.49px;
+    left: 596.31px;
+    width: 648.95px;
+    height: 648.95px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  // ── Image jambe (shutterstock_293552654) ────────────────
+  &__bone {
+    position: absolute;
+    top: 50px;            // Figma 131.11 − 81
+    left: 861px;          // Figma 861.05px
+    width: 412px;         // Figma 411.97px
+    height: 689px;        // Figma 688.73px
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    height: auto;
+    min-height: 600px;
+    padding: 40px 32px;
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 40px;
+      line-height: 1.1;
+      margin-top: 40px;
+    }
+
+    &__subtitle {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 16px;
+    }
+
+    &__line {
+      position: relative;
+      top: auto; left: auto;
+      margin-top: 16px;
+    }
+
+    &__text {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 16px;
+    }
+
+    &__cta {
+      position: relative;
+      top: auto; left: auto;
+      margin-top: 30px;
+    }
+
+    &__deco-cross {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: auto;
+      right: 20px;
+      width: 260px;
+      height: 260px;
+    }
+
+    &__mask { display: none; }
+
+    &__bone {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      width: 260px;
+      height: 420px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    height: auto;
+    min-height: 700px;
+    margin-top: 73px !important;
+    padding: 33px 17px 40px;
+
+    &__title {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      font-size: 37px;
+      line-height: 1;
+      margin-top: -4px;
+      margin-left: 4px;
+    }
+
+    &__subtitle {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      font-size: 20px;
+      line-height: 1.13;
+      letter-spacing: 0.10em;
+      margin-top: 13px;
+      margin-left: 4px;
+    }
+
+    &__line {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-top: 14px;
+    }
+
+    &__text {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      font-size: 15px;
+      line-height: 26px;
+      margin-top: 18px;
+    }
+
+    &__cta {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-top: 30px;
+    }
+
+    &__deco-cross {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: 160px;
+      width: 200px;
+      height: 200px;
+    }
+
+    &__mask {
+      display: none;
+    }
+
+    &__bone {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 40px;
+      width: 180px;
+      height: 320px;
+    }
+  }
+}

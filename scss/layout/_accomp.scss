@@ -1,0 +1,154 @@
+@use '../abstracts/variables' as *;
+
+// Calcul base : team section top = 1054px, height ≈ 562px → bottom ~1616px
+// Accomp section top Figma = 1516px → gap ~0px (lignes séparatrices entre les deux)
+
+.accomp {
+  background-color: $color-black;
+  width: 100%;
+  position: relative;
+  padding-bottom: 60px;
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 101px;   // Figma: text left 101px
+    padding-top: 43px;
+  }
+
+  // ── Bloc texte ───────────────────────────────────────────
+  &__content {
+    width: 555px;          // Figma: 555px
+    flex-shrink: 0;
+  }
+
+  // ── H2 ──────────────────────────────────────────────────
+  &__title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 20px;
+
+    &--red {
+      color: $color-red;
+    }
+  }
+
+  // ── Sous-titre bold ──────────────────────────────────────
+  &__subtitle {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 18px;       // Figma: 18px
+    line-height: 25px;     // Figma: 25px
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 10px;
+  }
+
+  // ── Body text ────────────────────────────────────────────
+  &__text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;       // Figma: 15px
+    line-height: 25px;     // Figma: 25px
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0 0 10px;
+  }
+
+  // ── CTA ─────────────────────────────────────────────────
+  &__cta {
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+    margin-left: 3px;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__cta-circle {
+    width: 65px;
+    height: 65px;
+    border: 1.5px solid $color-red;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__cta-text {
+    margin-left: -25px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: nowrap;
+    background-color: $color-black;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+  }
+
+  // ── Image radio ──────────────────────────────────────────
+  &__image {
+    position: relative;
+    z-index: 2;
+    margin-left: 59px;     // Figma: 715 - (101+555) = 59px
+    margin-top: -25px;     // Figma: image top 1594 vs text top 1619 = -25px
+    width: 623px;          // Figma: 623px
+    height: 462px;         // Figma: 462px
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    padding-bottom: 40px;
+
+    &__inner {
+      flex-direction: column;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 50px;
+    }
+
+    &__content { width: 100%; }
+
+    &__title { font-size: 32px; line-height: 1.2; }
+
+    &__image {
+      margin-left: 0;
+      margin-top: 32px;
+      width: 100%;
+      height: 320px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    padding-bottom: 40px;
+
+    &__inner {
+      flex-direction: column;
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 40px;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__title { font-size: 28px; line-height: 1.2; }
+
+    &__image {
+      margin-left: 0;
+      margin-top: 30px;
+      width: 100%;
+      height: 240px;
+    }
+  }
+}

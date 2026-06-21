@@ -1,0 +1,407 @@
+@use '../abstracts/variables' as *;
+
+// Footer top Figma ≈ 8652px (après commentform 8332+320)
+// Positions relatives = Figma top − 8652
+
+.footer {
+  position: relative;
+  background-color: $color-black;
+  width: 100%;
+  min-height: 216px;
+   // red bar top 156px + height 55px + 5px
+
+  // ── Adresse ─────────────────────────────────────────────
+  // Figma: top 8705 → 53px, left 130px, Gilroy 300, 16px/25px, #FFFFFF
+  &__address {
+    position: absolute;
+    top: 16px;
+    left: 106px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 16px;
+      height: 20px;
+      flex-shrink: 0;
+      position: relative;
+      left: -6px;
+      top: -1px;
+    }
+  }
+
+  // ── Téléphone ────────────────────────────────────────────
+  // Figma: top 8743 → 91px, left 130px, Gilroy 800, 16px/25px, #FFFFFF
+  &__phone {
+    position: absolute;
+    top: 53px;
+    left: 105px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 25px;
+    color: $color-white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      position: relative;
+      left: -3px;
+    }
+
+    // Vector 164 — trait rouge 30px après le numéro
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 0;
+      border-top: 1.5px solid $color-red;
+      margin-left: 2px;
+      vertical-align: -1px;
+    }
+  }
+
+  // ── Logo centré ──────────────────────────────────────────
+  // Figma: top 8682 → 30px, left 558px, 324×102px
+  &__logo {
+    position: absolute;
+    top: 30px;
+    left: 558px;
+    width: 324px;
+    text-align: center;
+  }
+
+  // Clone du logo header (header__logo-build), mis à l'échelle pour le footer
+  &__logo-mark {
+    position: relative;
+    left: -38px;
+    top: -37px;
+    width: 400px;
+    height: 55.18px;
+    margin: 0 auto;
+    transform: scale(0.81);
+    transform-origin: top center;
+  }
+
+  // Clone du tagline header (header__tagline), mis à l'échelle pour le footer
+  &__tagline-mark {
+    position: relative;
+    top: -106px;
+    left: -34px;
+    width: 360px;
+    height: 130px;
+    margin: 14px auto 0;
+    transform: scale(0.81);
+    transform-origin: top center;
+  }
+
+  // ── Bouton NOUS CONTACTER ────────────────────────────────
+  // Figma: top 8708 → 56px, left 1086px, 234×53px, radius 100px, border 1.5px #FFFFFF
+  &__contact {
+    position: absolute;
+    top: 19px;
+    left: 1086px;
+    width: 234px;
+    height: 53px;
+    border: 1.5px solid $color-white;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 4px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.23em;
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+
+  &__contact-text {
+    position: relative;
+    left: -3px;
+  }
+
+  // Vector 6 — trait rouge 41px à droite du bouton NOUS CONTACTER
+  // Figma: top 8736 → 84px, left 1298.5px, width 41px, border 1.5px, #B40400
+  &__vector6 {
+    position: absolute;
+    top: 46px;
+    left: 1299px;
+    width: 41px;
+    height: 0;
+    border-top: 1.5px solid $color-red;
+    display: block;
+  }
+
+  // ── Bouton retour haut de page ───────────────────────────
+  // Figma: Ellipse 12 — 46×46px, top 8631 → −21px, left 1292px, bg #F0F0F0
+  &__backtop {
+    position: absolute;
+    top: -58px;
+    left: 1292px;
+    width: 46px;
+    height: 46px;
+    background-color: #F0F0F0;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+
+    &:hover { background-color: #e0e0e0; }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    min-height: auto !important;
+    padding: 40px 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &__logo {
+      order: 1;
+      position: relative !important;
+      top: auto !important; left: auto !important;
+      width: 240px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &__logo-mark,
+    &__tagline-mark {
+      transform: scale(0.65);
+    }
+
+    &__address {
+      order: 2;
+      position: relative !important;
+      top: auto !important; left: auto !important;
+      margin: 24px 0 10px;
+    }
+
+    &__phone {
+      order: 3;
+      position: relative !important;
+      top: auto !important; left: auto !important;
+      margin-bottom: 24px;
+
+      &::after { display: none; }
+    }
+
+    &__contact {
+      order: 4;
+      position: relative !important;
+      top: auto !important; left: auto !important;
+      width: 240px;
+      align-self: center;
+      margin-bottom: 30px;
+    }
+
+    &__vector6 { display: none !important; }
+    &__backtop { display: none !important; }
+
+    &__nav {
+      order: 5;
+      position: relative !important;
+      top: auto !important; left: auto !important;
+      width: calc(100% + 64px);
+      margin-left: -32px;
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px 32px;
+      gap: 0;
+    }
+
+    &__nav-item {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    min-height: auto !important;
+    padding: 40px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &__logo {
+      order: 1;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 220px;
+      margin: 0 auto 0;
+      text-align: center;
+    }
+
+    &__logo-mark {
+      transform: scale(0.6);
+    }
+
+    &__tagline-mark {
+      transform: scale(0.6);
+      margin: 8px auto 0;
+    }
+
+    &__address {
+      order: 2;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      display: flex;
+      margin: 24px 0 10px;
+      font-size: 14px;
+      font-weight: $fw-light;
+    }
+
+    &__phone {
+      order: 3;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      display: flex;
+      margin-bottom: 24px;
+      font-size: 16px;
+
+      &::after { display: none; }
+    }
+
+    &__contact {
+      order: 4;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 220px;
+      height: 50px;
+      align-self: center;
+      margin-bottom: 30px;
+    }
+
+    &__vector6 { display: none !important; }
+    &__backtop { display: none !important; }
+
+    &__nav {
+      order: 5;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: calc(100% + 48px);
+      margin-left: -24px;
+      margin-right: -24px;
+      margin-top: 30px;
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 30px 24px;
+      gap: 20px;
+    }
+
+    &__nav-item {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      padding: 10px 0;
+      display: block;
+      line-height: 1.4;
+
+      &:not(:last-child)::after { display: none; }
+    }
+
+    &__copyright {
+      order: 6;
+      position: relative !important;
+      width: calc(100% + 48px);
+      margin-left: -24px;
+      margin-right: -24px;
+      background-color: #0a0a0a;
+      text-align: center;
+      padding: 12px 24px;
+      font-family: $font-primary;
+      font-weight: $fw-light;
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // ── Barre nav rouge en bas ───────────────────────────────
+  // Figma: top 8808 → 156px, 1440×55px, gradient #B40400 → #650200
+  &__nav {
+    position: absolute;
+    top: 116px;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(180deg, #B40400 0%, #650200 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__nav-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+
+    &:hover { animation-play-state: paused; }
+  }
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  // ── Item de nav ──────────────────────────────────────────
+  // Figma: Gilroy 800, 13px, 10% ls, Uppercase, #FFFFFF
+  &__nav-item {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+    padding: 0 20px;
+
+    &:not(:last-child)::after {
+      content: '|';
+      margin-left: 20px;
+      opacity: 0.6;
+    }
+  }
+}

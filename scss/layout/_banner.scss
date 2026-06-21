@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as *;
+
+.banner {
+  position: relative;
+  z-index: 2;
+  background-color: #F0F0F0;
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 216px;
+
+  &__inner {
+    width: 1009px;       // Figma: 1009px
+    height: 155px;       // Figma: 155px
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 25px;     // Figma: 25px
+    line-height: 45px;   // Figma: 45px
+    letter-spacing: 0.10em; // Figma: 10%
+    text-transform: uppercase;
+    color: $color-black;
+    margin: 0;
+
+    &--red {
+      color: $color-red;
+    }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    padding: 0 32px;
+
+    &__inner {
+      width: 100%;
+      height: auto;
+      padding: 40px 0;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    margin-top: 30px;
+    padding: 0 24px;
+
+    &__inner {
+      width: 100%;
+      height: auto;
+      padding: 30px 0;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.06em;
+    }
+  }
+}

@@ -1,0 +1,349 @@
+@use '../abstracts/variables' as *;
+
+// Section top Figma ≈ 6630px (après rendezvous 6290+340)
+// Positions relatives = Figma top − 6630
+
+.blog {
+  position: relative;
+  background-color: $color-black;
+  width: 100%;
+  min-height: 789px;   // grid top 289px + card 440px + marge
+
+  // ── H2 ──────────────────────────────────────────────────
+  // Figma: top 6682px → 6682 − 6630 = 52px
+  &__title {
+    position: absolute;
+    top: 67px;
+    left: 100px;
+    width: 1178px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 60px;
+    line-height: 70px;
+    color: $color-white;
+    margin: 0;
+  }
+
+  // ── Texte intro ──────────────────────────────────────────
+  // Figma: top 6752px → 6752 − 6630 = 122px
+  &__intro {
+    position: absolute;
+    top: 145px;
+    left: 100px;
+    width: 1110px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 16px;
+    line-height: 25px;
+    color: $color-white;
+    margin: 0;
+
+    strong { font-weight: $fw-extrabold; }
+  }
+
+  // ── Lien "voir toutes les actualités" ────────────────────
+  // Figma: top 6842px → 6842 − 6630 = 212px
+  &__link {
+    position: absolute;
+    top: 225px;
+    left: 100px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+
+  }
+
+  // Line 97 — trait rouge sous "voir toutes les actualités"
+  // Figma: top 6874 → 6874-6630=244px, left 101px, width 263px, border 2px #B40400
+  &__line97 {
+    position: absolute;
+    top: 249px;
+    left: 101px;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  // ── Grille 3 cartes ──────────────────────────────────────
+  // Figma: top 6874px → 6874 − 6630 = 244px
+  // Left 86px, each card 422px, total 3×422=1266px, margins ~87px each side → no gap
+  &__grid {
+    position: absolute;
+    top: 297px;
+    left: 100px;
+    display: flex;
+    gap: 23px;
+  }
+
+  // ── Carte ────────────────────────────────────────────────
+  &__card {
+    position: relative;
+    width: 398px;
+    min-height: 394px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translate(-1px, -20px);
+    }
+
+    &:hover .blog__card-img-wrap::after { opacity: 1; }
+  }
+
+  // Trait vertical rouge gauche — Line 96.png (146px de long, rotation −90° dans Figma)
+  // Top = 315px (fin de l'image), left = 0
+  &__line96 {
+    position: absolute;
+    bottom: 39px;
+    left: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  // Image zone (partie haute ~48% de 648 = ~315px)
+  &__card-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 268px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    // Overlay rouge uniquement sur la photo — Figma: #650200 à 75%
+    &::after {
+      content: '';
+      position: absolute;
+      top: -21px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(101, 2, 0, 0.75);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  // Badge catégorie — Figma: top 6919 → 6919-6874=45px / left 100-100=0px
+  // 108px×35px, Gilroy 800, 15px, center, #FFFFFF, bg red
+  &__card-cat {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 108px;
+    height: 35px;
+    background-color: $color-red;
+    border-radius: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 15px;
+    line-height: 1;
+    color: $color-white;
+    z-index: 1;
+  }
+
+  // Corps texte de la carte (zone basse)
+  &__card-body {
+    padding: 0 32px 44px;
+  }
+
+  // Date — Figma: top 7189 → 7189-6874=315px / left 118-86=32px
+  // Gilroy 300, 13px, 50px lh, #FFFFFF
+  &__card-date {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 13px;
+    line-height: 30px;
+    color: $color-white;
+    margin: 11px 0 0;
+    padding-left: 0;
+    position: relative;
+    left: -14px;
+  }
+
+  // Titre article — Figma: Gilroy 800, 20px, 50px lh, #FFFFFF
+  &__card-title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 20px;
+    line-height: 50px;
+    color: $color-white;
+    margin: -12px 0 0;
+    position: relative;
+    left: -14px;
+  }
+
+  &__card-read {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 13px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: $color-red;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  // Extrait — Figma: Gilroy 300, 15px, 23px lh, #FFFFFF
+  &__card-text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;
+    line-height: 23px;
+    color: $color-white;
+    margin: -6px 0 0;
+    position: relative;
+    left: -14px;
+    width: 410px;
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    min-height: auto;
+    padding: 40px 0 60px;
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 42px;
+      line-height: 1.2;
+      padding: 0 32px;
+    }
+
+    &__intro {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      padding: 16px 32px 0;
+    }
+
+    &__link {
+      position: relative;
+      top: auto; left: auto;
+      display: block;
+      padding: 16px 32px 0;
+    }
+
+    &__line97 { display: none; }
+
+    &__grid {
+      position: relative;
+      top: auto; left: auto;
+      flex-direction: row;
+      padding: 0 32px;
+      margin-top: 32px;
+      gap: 16px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 70%;
+      min-height: auto;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    min-height: auto;
+    padding: 40px 0 40px;
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 36px;
+      line-height: 1.2;
+      padding: 0 24px;
+    }
+
+    &__intro {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      padding: 16px 24px 0;
+    }
+
+    &__link {
+      position: relative;
+      top: auto; left: auto;
+      display: block;
+      padding: 12px 24px 0;
+    }
+
+    &__line97 { display: none; }
+
+    &__grid {
+      position: relative;
+      top: auto; left: auto;
+      flex-direction: row;
+      padding: 0 24px;
+      margin-top: 24px;
+      gap: 12px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar { display: none; }
+    }
+
+    &__card {
+      width: 85%;
+      min-height: auto;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
+    &__card-img-wrap { height: 220px; }
+
+    &__dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    &__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
+
+      &--active { background-color: $color-red; }
+    }
+
+    &__link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 24px;
+    }
+  }
+}
+
+.blog__dots { display: none; }

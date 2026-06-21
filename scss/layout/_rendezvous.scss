@@ -1,0 +1,229 @@
+@use '../abstracts/variables' as *;
+
+// Section top Figma ≈ 6290px (après pathologies 5205+1085)
+// Positions relatives = Figma top − 6290
+
+.rendezvous {
+  position: relative;
+  background-color: $color-black;
+  width: 100%;
+  min-height: 580px;
+
+  // ── Carte rouge arrondie ─────────────────────────────────
+  &__card {
+    position: absolute;
+    top: 307px;
+    left: 100px;
+    width: 1238px;
+    height: 276px;
+    background: linear-gradient(180deg, #B40400 0%, #650200 100%);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 24px 16px;
+    overflow: hidden;
+  }
+
+  // ── Titre ────────────────────────────────────────────────
+  // Figma: top 6357px → 6357 − 6290 = 67px (soit ~55px padding card + ~12px margin)
+  &__title {
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 28px;
+    line-height: 25px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    margin: 0 0 10px;
+    width: 1190px;
+    transform: translateX(3px);
+  }
+
+  // ── Trait séparateur blanc ────────────────────────────────
+  // Line 105 — Figma: width 82px, border 4px, #FFFFFF, top 6445 → 96px from card top
+  &__sep {
+    display: block;
+    width: 82px;
+    height: 0;
+    border-top: 4px solid $color-white;
+    margin: 0 auto 12px;
+    flex-shrink: 0;
+    position: relative;
+    top: 9px;
+  }
+
+  // ── Texte body ───────────────────────────────────────────
+  // Figma: Gilroy 300, 16px, 25px lh, center, #FFFFFF
+  &__text {
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: $color-white;
+    margin: 23px 0 16px;
+    width: 999px;
+    transform: translateX(1px);
+    letter-spacing: 0;
+
+    strong { font-weight: $fw-extrabold; }
+  }
+
+  // ── Rangée boutons ────────────────────────────────────────
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+    transform: translateX(3px);
+  }
+
+  // ── Bouton générique (outlined blanc) ────────────────────
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 165px;
+    height: 38px;
+    padding: 0 20px;
+    background-color: $color-white;
+    border: 1.5px solid $color-white;
+    border-radius: 50px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0;
+    color: $color-red;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-white;
+    }
+
+    &:not(&--mail) {
+      transform: translateX(-2px);
+      margin-top: 3px;
+    }
+
+    &--mail {
+      width: 143px;
+      color: #000000;
+      transform: translateX(-3px);
+      margin-top: 2px;
+
+      &:hover { color: $color-white; }
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      position: relative;
+      left: -6px;
+      top: 2px;
+    }
+
+    &--mail img {
+      width: 23px;
+      height: 17px;
+      left: 4px;
+      top: 0;
+    }
+
+    &-text {
+      position: relative;
+      left: 6px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    min-height: auto;
+    padding: 40px 32px;
+
+    &__card {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    &__title {
+      width: 100%;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    &__text { width: 100%; }
+
+    &__actions {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    min-height: auto;
+    padding: 0;
+
+    &__card {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      padding: 50px 24px 40px;
+      text-align: center;
+    }
+
+    &__title {
+      width: 100%;
+      font-size: 28px;
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+    }
+
+    &__sep {
+      margin: 16px auto 16px;
+    }
+
+    &__text {
+      width: 100%;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    &__actions {
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    &__btn {
+      width: 100%;
+      justify-content: center;
+      padding: 16px 24px;
+      font-size: 16px;
+      border-radius: 50px;
+    }
+  }
+}

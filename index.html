@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Polle — Institut du Genou, de la Cheville et du Pied</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- Traits verticaux rouges décoratifs (au-dessus/dessous photo équipe) -->
+  <div class="deco-traits" aria-hidden="true">
+    <span class="deco-trait deco-trait--1"></span>
+    <span class="deco-trait deco-trait--2"></span>
+    <span class="deco-trait deco-trait--3"></span>
+    <span class="deco-trait deco-trait--4"></span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+
+      <!-- Gauche : icône combinée hamburger+loupe + "menu" | téléphone -->
+      <div class="header__left">
+
+        <button class="header__menu-btn" aria-label="Ouvrir le menu">
+          <img class="header__icon-menu" src="assets/images/menu_burger.png" alt="" aria-hidden="true" />
+          <span class="header__menu-label">menu</span>
+        </button>
+
+        <a class="header__phone" href="tel:0235595947" aria-label="Appeler le 02 35 59 59 47">
+          <!-- Icône téléphone rouge -->
+          <img src="assets/images/tel.png" alt="" aria-hidden="true" width="17" height="17" style="flex-shrink:0" />
+          <span class="header__phone-num">02 35 59 59 47</span>
+        </a>
+
+      </div>
+
+      <!-- Tagline lettre par lettre -->
+      <div class="header__tagline">
+        <img class="header__tagline-letter" style="left:80.3px; top:69.07px; width:2.71px; height:15.40px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:87.12px; top:69.07px; width:13.42px; height:15.40px" src="assets/images/N.png" alt="N" />
+        <img class="header__tagline-letter" style="left:103.47px; top:68.86px; width:11.93px; height:15.83px" src="assets/images/S.png" alt="S" />
+        <img class="header__tagline-letter" style="left:117.18px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:132.7px; top:69.07px; width:2.70px; height:15.40px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:138.42px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:153.54px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+        <img class="header__tagline-letter" style="left:169.34px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:191.31px; top:69.07px; width:13.93px; height:15.40px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:208.28px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+        <img class="header__tagline-letter" style="left:231.1px; top:68.8px; width:14.43px; height:15.93px" src="assets/images/G.png" alt="G" />
+        <img class="header__tagline-letter" style="left:249.02px; top:69.07px; width:11.53px; height:15.40px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:263.77px; top:69.07px; width:13.44px; height:15.40px" src="assets/images/N.png" alt="N" />
+        <img class="header__tagline-letter" style="left:280.49px; top:68.8px; width:16.11px; height:15.93px" src="assets/images/O.png" alt="O" />
+        <img class="header__tagline-letter" style="left:299.64px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+
+        <img class="header__tagline-letter" style="left:38.8px; top:92.38px; width:13.93px; height:15.41px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:56.01px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:77.35px; top:92.38px; width:10.82px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:89.66px; top:92.28px; width:16.07px; height:15.52px" src="assets/images/A.png" alt="A" />
+
+        <img class="header__tagline-letter" style="left:114.29px; top:92.13px; width:14.08px; height:15.93px" src="assets/images/C.png" alt="C" />
+        <img class="header__tagline-letter" style="left:131.22px; top:92.38px; width:12.76px; height:15.42px" src="assets/images/H.png" alt="H" />
+        <img class="header__tagline-letter" style="left:147.94px; top:92.38px; width:11.52px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:161.37px; top:92.38px; width:15.19px; height:15.51px" src="assets/images/V.png" alt="V" />
+        <img class="header__tagline-letter" style="left:179.34px; top:92.38px; width:2.70px; height:15.41px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:186.19px; top:92.38px; width:10.81px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:199.79px; top:92.38px; width:10.81px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:213.42px; top:92.38px; width:11.55px; height:15.41px" src="assets/images/E.png" alt="E" />
+
+        <img class="header__tagline-letter" style="left:234.76px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:248.42px; top:92.38px; width:12.50px; height:15.41px" src="assets/images/T.png" alt="T" />
+
+        <img class="header__tagline-letter" style="left:270.38px; top:92.38px; width:13.93px; height:15.41px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:287.34px; top:92.38px; width:13.20px; height:15.65px" src="assets/images/U.png" alt="U" />
+
+        <img class="header__tagline-letter" style="left:310.85px; top:92.38px; width:11.94px; height:15.42px" src="assets/images/P.png" alt="P" />
+        <img class="header__tagline-letter" style="left:325.71px; top:92.38px; width:2.70px; height:15.41px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:332.53px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:347.27px; top:92.38px; width:13.94px; height:15.41px" src="assets/images/D.png" alt="D" />
+
+        <img class="header__tagline-letter" style="left:156.38px; top:116.60px; width:7.82px; height:9.24px" src="assets/images/N1.png" alt="N" />
+        <img class="header__tagline-letter" style="left:166.4px; top:116.44px; width:9.43px; height:9.63px" src="assets/images/O1.png" alt="O" />
+        <img class="header__tagline-letter" style="left:178.04px; top:116.60px; width:7.65px; height:9.24px" src="assets/images/R1.png" alt="R" />
+        <img class="header__tagline-letter" style="left:187.59px; top:116.60px; width:8.85px; height:9.24px" src="assets/images/M1.png" alt="M" />
+        <img class="header__tagline-letter" style="left:198.27px; top:116.53px; width:9.40px; height:9.31px" src="assets/images/A1.png" alt="A" />
+        <img class="header__tagline-letter" style="left:209.48px; top:116.60px; width:7.82px; height:9.24px" src="assets/images/N1.png" alt="N" />
+        <img class="header__tagline-letter" style="left:219.3px; top:116.6px; width:8.35px; height:9.24px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:229.65px; top:116.6px; width:1.62px; height:9.24px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:233.27px; top:116.6px; width:6.91px; height:9.24px" src="assets/images/E.png" alt="E" />
+      </div>
+
+      <!-- Centre : Logo -->
+      <a class="header__logo" href="/" aria-label="Dr Polle — Accueil">
+        <div class="header__logo-build">
+          <img class="header__logo-letter header__logo-letter--i" src="assets/images/I.png" alt="I" />
+          <img class="header__logo-letter header__logo-letter--plus" src="assets/images/+.png" alt="" aria-hidden="true" />
+          <img class="header__logo-letter header__logo-letter--gcp" src="assets/images/GCP.png" alt="GCP" />
+          <img class="header__logo-letter header__logo-letter--c2" src="assets/images/C2.png" alt="" aria-hidden="true" />
+          <img class="header__logo-letter header__logo-letter--traitv" src="assets/images/TRAITV.png" alt="" aria-hidden="true" />
+          <img class="header__logo-letter header__logo-letter--d" src="assets/images/D2.png" alt="D" />
+          <img class="header__logo-letter header__logo-letter--r" src="assets/images/R.png" alt="R" />
+          <img class="header__logo-letter header__logo-letter--red" src="assets/images/RED.png" alt="" aria-hidden="true" />
+          <img class="header__logo-letter header__logo-letter--p" src="assets/images/P2.png" alt="P" />
+          <img class="header__logo-letter header__logo-letter--o" src="assets/images/O2.png" alt="O" />
+          <img class="header__logo-letter header__logo-letter--l1" src="assets/images/L2.png" alt="L" />
+          <img class="header__logo-letter header__logo-letter--l2" src="assets/images/L2.png" alt="L" />
+          <img class="header__logo-letter header__logo-letter--e" src="assets/images/E2.png" alt="E" />
+        </div>
+        <img class="header__logo-trait" src="assets/images/trait_logo.png" alt="" aria-hidden="true" />
+      </a>
+
+      <!-- Droite : search + CTA -->
+      <div class="header__right">
+        <button class="header__search-btn" aria-label="Rechercher">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="9.5" cy="9.5" r="8" stroke="white" stroke-width="2"/>
+            <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a class="header__cta" href="/contact">Nous contacter</a>
+        <span class="header__vector6" aria-hidden="true"></span>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+  <!-- HERO -->
+  <section class="hero" style="margin-top: 81px;">
+
+    <!-- H1 -->
+    <h1 class="hero__title">Notre vocation, votre motricité</h1>
+
+    <!-- Sous-titre -->
+    <p class="hero__subtitle">Pathologies &amp; chirurgies : genou, cheville et pied</p>
+
+    <!-- Trait rouge -->
+    <span class="hero__line"></span>
+
+    <!-- Body text -->
+    <p class="hero__text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
+      pellentesque cursus potenti nunc. Ullamcorper tempus
+      imperdiet nunc suscipit lacus, venenatis.
+    </p>
+
+    <!-- CTA -->
+    <a class="hero__cta" href="#" aria-label="En savoir plus">
+      <span class="hero__cta-circle"></span>
+      <span class="hero__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="hero__cta-arrow" /></span>
+    </a>
+
+    <!-- Croix blanche -->
+    <div class="hero__deco-cross" aria-hidden="true">
+      <img src="assets/images/Vector.png" alt="" />
+    </div>
+
+    <!-- Mask Group (3) -->
+    <img class="hero__mask" src="assets/images/Mask%20Group%20(3).png" alt="" aria-hidden="true" />
+
+    <!-- Image jambe -->
+    <img class="hero__bone" src="assets/images/shutterstock_293552654.png" alt="" aria-hidden="true" />
+
+    <!-- Bouton "Prendre rendez-vous" -->
+    <a class="rdv-btn" href="#" aria-label="Prendre rendez-vous">
+      <img src="assets/images/Prendre%20rendez-vous.png" alt="Prendre rendez-vous" />
+    </a>
+
+  </section>
+
+  <!-- SEARCH BAR -->
+  <section class="search-section">
+    <form class="search-section__bar" role="search" action="/recherche" method="get">
+      <input
+        class="search-section__input"
+        type="search"
+        name="q"
+        placeholder="Rechercher un acte, une intervention, une pathologie, ...."
+        aria-label="Rechercher"
+      />
+      <span class="search-section__divider" aria-hidden="true"></span>
+      <button class="search-section__icon" type="submit" aria-label="Lancer la recherche">
+        <svg viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="9.5" cy="9.5" r="8.5" stroke="#B40400" stroke-width="2"/>
+          <line x1="15.9" y1="16.1" x2="21" y2="22" stroke="#B40400" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+  </section>
+
+  <!-- SECTION ÉQUIPE -->
+  <section class="team">
+    <div class="team__inner">
+
+      <img class="team__image" src="assets/images/iStock-491559076%201.png" alt="Équipe chirurgicale Dr Polle" />
+
+      <div class="team__content">
+        <h2 class="team__title">
+          Une équipe expérimentée au service de <span class="team__title--red">votre santé</span>
+        </h2>
+        <p class="team__subtitle">
+          Avec + de 16 ans d'experience et 1600 interventions par an. Une équipe d'experts formée en continue = à la pointe du savoir médical et chirurgical.
+        </p>
+        <p class="team__text">
+          Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. Auctor ipsum aenean maecenas sapien. Arcu aliquam amet consectetur iaculis dictum tincidunt semper pulvinar morbi. Convallis ornare ultricies in magna etiam.
+        </p>
+        <p class="team__text">
+          Placerat nunc sagittis molestie mauris. Proin in mauris nisi justo, vestibulum nisl. Dictum ac fermentum,.
+        </p>
+        <a class="team__cta" href="#" aria-label="En savoir plus">
+          <span class="team__cta-circle"></span>
+          <span class="team__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION ACCOMPAGNEMENT PREMIUM -->
+  <section class="accomp">
+
+    <div class="accomp__inner">
+      <div class="accomp__content">
+        <h2 class="accomp__title">
+          Un accompagnement<br>
+          <span class="accomp__title--red">premium</span>
+        </h2>
+        <p class="accomp__subtitle">
+          Une prise en charge globale et adaptée au patient / une communication transparente et pédagogique / des dispositifs sanitaires pour assurer une securité maximale / Un suivi personnalisé.
+        </p>
+        <p class="accomp__text">
+          Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. Auctor ipsum aenean maecenas sapien. Arcu aliquam amet consectetur iaculis dictum tincidunt semper pulvinar morbi. Convallis ornare ultricies in magna etiam.
+        </p>
+        <a class="accomp__cta" href="#" aria-label="En savoir plus">
+          <span class="accomp__cta-circle"></span>
+          <span class="accomp__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+        </a>
+      </div>
+
+      <img class="accomp__image" src="assets/images/8c2ade8f737747120d90b02420465bfa63b9da7a.jpg" alt="Radiographie genou Dr Polle" />
+    </div>
+  </section>
+
+  <!-- BANNER BLANC -->
+  <section class="banner">
+    <div class="banner__inner">
+      <p class="banner__text">
+        Prise en charge <span class="banner__text--red">sur-mesure</span> &amp; accompagnement <span class="banner__text--red">premium</span>.<br>
+        Retrouvez le plaisir de vous déplacer <span class="banner__text--red">en toute sécurité</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION LES CHIRURGIES RÉPARATRICES -->
+  <section class="chirurgies">
+
+    <!-- Déco coin gauche (Vector rouge) -->
+    <div class="chirurgies__deco-cross" aria-hidden="true">
+      <img src="assets/images/Vector_red.png" alt="" />
+    </div>
+
+    <h2 class="chirurgies__title">Les chirurgies réparatrices</h2>
+
+    <p class="chirurgies__subtitle">
+      <strong>Des chirurgies réparatrices pour redonner vie à votre mobilité…</strong>
+      <span class="chirurgies__subtitle--light"> Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong></span>
+    </p>
+
+    <a class="chirurgies__cta" href="#" aria-label="En savoir plus">
+      <span class="chirurgies__cta-circle"></span>
+      <span class="chirurgies__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+    </a>
+
+    <!-- Grille 3 cartes -->
+    <div class="chirurgies__grid">
+
+      <!-- Carte Genou -->
+      <div class="chirurgies__card chirurgies__card--genou">
+        <div class="chirurgies__card-clip">
+          <img class="chirurgies__card-img" src="assets/images/731fc238876dae28f9729f4c3306360e66f3696d.jpg" alt="Chirurgie du genou" />
+          <div class="chirurgies__card-gradient"></div>
+          <span class="chirurgies__card-label">Chirurgie du genou</span>
+          <div class="chirurgies__card-overlay">
+            <h3 class="chirurgies__card-title">Chirurgie du genou</h3>
+            <p class="chirurgies__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat.</p>
+            <a class="chirurgies__card-link" href="#">En savoir plus</a>
+          </div>
+        </div>
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--tl" />
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--br" />
+      </div>
+
+      <!-- Carte Cheville -->
+      <div class="chirurgies__card chirurgies__card--cheville">
+        <div class="chirurgies__card-clip">
+          <img class="chirurgies__card-img" src="assets/images/801351b11f4abdef8b962e60c40adf70d0bcec2d.jpg" alt="Chirurgie de la cheville" />
+          <div class="chirurgies__card-gradient"></div>
+          <span class="chirurgies__card-label">Chirurgie de la cheville</span>
+          <div class="chirurgies__card-overlay">
+            <h3 class="chirurgies__card-title">Chirurgie de la cheville</h3>
+            <p class="chirurgies__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat.</p>
+            <a class="chirurgies__card-link" href="#">En savoir plus</a>
+          </div>
+        </div>
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--tl" />
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--br" />
+      </div>
+
+      <!-- Carte Pied -->
+      <div class="chirurgies__card chirurgies__card--pied">
+        <div class="chirurgies__card-clip">
+          <img class="chirurgies__card-img" src="assets/images/109c899da5c821b5123c04f6eac0badb1800e22b.jpg" alt="Chirurgie du pied" />
+          <div class="chirurgies__card-gradient"></div>
+          <span class="chirurgies__card-label">Chirurgie du pied</span>
+          <div class="chirurgies__card-overlay">
+            <h3 class="chirurgies__card-title">Chirurgie du pied</h3>
+            <p class="chirurgies__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.</p>
+            <a class="chirurgies__card-link" href="#">En savoir plus</a>
+          </div>
+        </div>
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--tl" />
+        <img src="assets/images/Plus.png" alt="" aria-hidden="true" class="chirurgies__card-plus chirurgies__card-plus--br" />
+      </div>
+
+    </div>
+
+    <!-- Dots carousel (mobile uniquement) -->
+    <div class="chirurgies__dots" aria-hidden="true">
+      <span class="chirurgies__dot chirurgies__dot--active"></span>
+      <span class="chirurgies__dot"></span>
+      <span class="chirurgies__dot"></span>
+    </div>
+
+  </section>
+
+  <!-- SECTION CHIRURGIES CIBLÉES (fond rouge) -->
+  <section class="ciblees">
+
+    <h2 class="ciblees__title">Les chirurgies réparatrices ciblées</h2>
+
+    <p class="ciblees__subtitle">
+      <strong>Des chirurgies réparatrices dédiées aux membres inférieurs. / Clinique spécialisée dans les interventions chirurgicales de prothèse de la cheville et du genou. / Votre spécialiste orthopédique en Normandie …</strong>
+      <span class="ciblees__subtitle--light"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus.</span>
+    </p>
+
+    <a class="ciblees__cta" href="#" aria-label="En savoir plus">
+      <span class="ciblees__cta-circle"></span>
+      <span class="ciblees__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+    </a>
+
+    <!-- Carte Genou -->
+    <div class="ciblees__card ciblees__card--genou">
+      <img class="ciblees__card-img" src="assets/images/414a06ef731647d8aaa6dc5f759da83f5ed9d189.jpg" alt="Prothèse totale du genou" />
+      <div class="ciblees__card-content">
+        <h3 class="ciblees__card-title">Prothèse totale du genou</h3>
+        <p class="ciblees__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus.</p>
+        <p class="ciblees__card-text">Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna.</p>
+        <a class="ciblees__card-btn" href="#"><img src="assets/images/fleche2.png" alt="" aria-hidden="true" class="cta-arrow2" /> En savoir plus</a>
+      </div>
+    </div>
+
+    <!-- Carte Cheville -->
+    <div class="ciblees__card ciblees__card--cheville">
+      <img class="ciblees__card-img" src="assets/images/414a06ef731647d8aaa6dc5f759da83f5ed9d189.jpg" alt="Prothèse totale de la cheville" />
+      <div class="ciblees__card-content">
+        <h3 class="ciblees__card-title">Prothèse totale de la cheville</h3>
+        <p class="ciblees__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus.</p>
+        <p class="ciblees__card-text">Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna.</p>
+        <a class="ciblees__card-btn" href="#"><img src="assets/images/fleche2.png" alt="" aria-hidden="true" class="cta-arrow2" /> En savoir plus</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION TRAITEMENTS NON-CHIRURGICAUX -->
+  <section class="traitements">
+
+    <h2 class="traitements__title">Les traitements<br>non-chirurgicaux</h2>
+
+    <img class="traitements__plus" src="assets/images/Plus.png" alt="" aria-hidden="true" />
+
+    <p class="traitements__intro">
+      Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong>
+    </p>
+
+    <!-- Image gauche (placeholder — donner le bon fichier) -->
+    <div class="traitements__media">
+      <img src="assets/images/512726d8438b63b320469f0f5ab4ab7d1287505d.jpg" alt="Traitement non-chirurgical" />
+    </div>
+
+    <!-- Ligne rouge fine verticale -->
+    <span class="traitements__line" aria-hidden="true"></span>
+    <!-- Indicateur actif épais -->
+    <span class="traitements__line-active" aria-hidden="true"></span>
+
+    <!-- Liste des traitements -->
+    <div class="traitements__list">
+
+      <div class="traitements__item traitements__item--active">
+        <h3 class="traitements__item-title">Acide hyaluronique</h3>
+        <p class="traitements__item-text">Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong></p>
+        <a class="traitements__item-link" href="#">En savoir plus</a>
+        <img class="traitements__item-img" src="assets/images/512726d8438b63b320469f0f5ab4ab7d1287505d.jpg" alt="Acide hyaluronique" />
+      </div>
+
+      <div class="traitements__item">
+        <h3 class="traitements__item-title">PRP Arthrose</h3>
+        <p class="traitements__item-text">Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong></p>
+        <a class="traitements__item-link" href="#">En savoir plus</a>
+        <img class="traitements__item-img" src="assets/images/512726d8438b63b320469f0f5ab4ab7d1287505d.jpg" alt="PRP Arthrose" />
+      </div>
+
+      <div class="traitements__item">
+        <h3 class="traitements__item-title">Infiltration corticoïdes</h3>
+        <p class="traitements__item-text">Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong></p>
+        <a class="traitements__item-link" href="#">En savoir plus</a>
+        <img class="traitements__item-img" src="assets/images/512726d8438b63b320469f0f5ab4ab7d1287505d.jpg" alt="Infiltration corticoïdes" />
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <a class="traitements__cta" href="#" aria-label="En savoir plus">
+      <span class="traitements__cta-circle"></span>
+      <span class="traitements__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+    </a>
+
+  </section>
+
+  <!-- SECTION LES PATHOLOGIES -->
+  <section class="pathologies">
+
+    <!-- Déco fil de fer top-right -->
+    <div class="pathologies__deco" aria-hidden="true">
+      <img src="assets/images/design.png" alt="" />
+    </div>
+
+    <h2 class="pathologies__title">Les pathologies</h2>
+
+    <p class="pathologies__subtitle">
+      <strong>Comprendre les causes de votre maladie afin de vous apporter le soin adapté / Mieux comprendre pour mieux soigner / Nos experts vous expliquent..</strong><span class="pathologies__subtitle--light">Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare.</span>
+    </p>
+
+    <a class="pathologies__cta" href="#" aria-label="En savoir plus">
+      <span class="pathologies__cta-circle"></span>
+      <span class="pathologies__cta-text">En savoir plus &nbsp;<img src="assets/images/fleche.png" alt="" aria-hidden="true" class="cta-arrow" /></span>
+    </a>
+
+    <!-- Grille 3 cartes -->
+    <div class="pathologies__grid">
+
+      <!-- Carte Genou -->
+      <div class="pathologies__card pathologies__card--genou">
+        <img class="pathologies__card-img" src="assets/images/GENOU.png" alt="Pathologie du genou" />
+        <div class="pathologies__card-gradient"></div>
+        <span class="pathologies__card-label">Genou</span>
+        <div class="pathologies__card-overlay">
+          <h3 class="pathologies__card-title">Genou</h3>
+          <p class="pathologies__card-text">Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus.</p>
+          <p class="pathologies__card-text">Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna.</p>
+          <a class="pathologies__card-link" href="#">En savoir plus</a>
+        </div>
+      </div>
+
+      <!-- Carte Cheville -->
+      <div class="pathologies__card pathologies__card--cheville">
+        <img class="pathologies__card-img" src="assets/images/CHEVILLE.jpg" alt="Pathologie de la cheville" />
+        <div class="pathologies__card-gradient"></div>
+        <span class="pathologies__card-label">Cheville</span>
+        <div class="pathologies__card-overlay">
+          <h3 class="pathologies__card-title">Cheville</h3>
+          <p class="pathologies__card-text">Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus.</p>
+          <p class="pathologies__card-text">Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna.</p>
+          <a class="pathologies__card-link" href="#">En savoir plus</a>
+        </div>
+      </div>
+
+      <!-- Carte Pied -->
+      <div class="pathologies__card pathologies__card--pied">
+        <img class="pathologies__card-img" src="assets/images/pied.jpeg" alt="Pathologie du pied" />
+        <div class="pathologies__card-gradient"></div>
+        <span class="pathologies__card-label">Pied</span>
+        <div class="pathologies__card-overlay">
+          <h3 class="pathologies__card-title">Pied</h3>
+          <p class="pathologies__card-text">Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus.</p>
+          <p class="pathologies__card-text">Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna.</p>
+          <a class="pathologies__card-link" href="#">En savoir plus</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Dots carousel (mobile uniquement) -->
+    <div class="pathologies__dots" aria-hidden="true">
+      <span class="pathologies__dot pathologies__dot--active"></span>
+      <span class="pathologies__dot"></span>
+      <span class="pathologies__dot"></span>
+    </div>
+
+  </section>
+
+  <!-- SECTION RENDEZ-VOUS AVEC LE DR POLLE -->
+  <section class="rendezvous">
+    <div class="rendezvous__card">
+      <h2 class="rendezvous__title">Vous souhaitez prendre rendez-vous avec le Dr Polle&nbsp;?</h2>
+      <span class="rendezvous__sep" aria-hidden="true"></span>
+      <p class="rendezvous__text">
+        Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong>
+      </p>
+      <div class="rendezvous__actions">
+        <a class="rendezvous__btn" href="tel:0235595947" aria-label="Prendre rendez-vous par téléphone">
+          <img src="assets/images/tel.png" alt="" aria-hidden="true" />
+          Par téléphone
+        </a>
+        <a class="rendezvous__btn rendezvous__btn--mail" href="mailto:contact@drpolle.fr" aria-label="Prendre rendez-vous par mail">
+          <img src="assets/images/mail.png" alt="" aria-hidden="true" />
+          <span class="rendezvous__btn-text">Par mail</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION BLOG — ET SI ON PARLAIT DE VOTRE SANTÉ ? -->
+  <section class="blog">
+
+    <h2 class="blog__title">Et si on parlait de votre santé&nbsp;?</h2>
+
+    <p class="blog__intro">
+      Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Sem adipiscing ante etiam et pellentesque rutrum egestas faucibus. Risus scelerisque quis dictumst nibh netus sit sit posuere. Nam massa ante amet orci purus sagittis ornare. <strong>Et risus placerat nibh et id sapien.</strong>
+    </p>
+
+    <a class="blog__link" href="#">Voir toutes les actualités</a>
+    <img class="blog__line97" src="assets/images/Line97.png" alt="" aria-hidden="true" />
+
+    <!-- Grille 3 cartes -->
+    <div class="blog__grid">
+
+      <!-- Carte 1 -->
+      <article class="blog__card">
+        <div class="blog__card-img-wrap">
+          <img src="assets/images/9b78d8854f8528a10d5416605e3d09a9aa8eaa00.jpg" alt="Article blog Dr Polle" />
+        </div>
+        <span class="blog__card-cat">Catégorie</span>
+        <img class="blog__line96" src="assets/images/Line 96.png" alt="" aria-hidden="true" />
+        <div class="blog__card-body">
+          <p class="blog__card-date">Publié le 3 avril 2021</p>
+          <h3 class="blog__card-title">Titre de l'article sur une ligne</h3>
+          <p class="blog__card-text">Adipiscing suscipit sociis duis nulla. Augue adipiscing cursus vel duis viverra blandit. Convallis molestie morbi porta felis [...]</p>
+        </div>
+      </article>
+
+      <!-- Carte 2 -->
+      <article class="blog__card">
+        <div class="blog__card-img-wrap">
+          <img src="assets/images/9b78d8854f8528a10d5416605e3d09a9aa8eaa00.jpg" alt="Article blog Dr Polle" />
+        </div>
+        <span class="blog__card-cat">Catégorie</span>
+        <img class="blog__line96" src="assets/images/Line 96.png" alt="" aria-hidden="true" />
+        <div class="blog__card-body">
+          <p class="blog__card-date">Publié le 3 avril 2021</p>
+          <h3 class="blog__card-title">Titre de l'article sur une ligne</h3>
+          <p class="blog__card-text">Adipiscing suscipit sociis duis nulla. Augue adipiscing cursus vel duis viverra blandit. Convallis molestie morbi porta felis [...]</p>
+        </div>
+      </article>
+
+      <!-- Carte 3 -->
+      <article class="blog__card">
+        <div class="blog__card-img-wrap">
+          <img src="assets/images/9b78d8854f8528a10d5416605e3d09a9aa8eaa00.jpg" alt="Article blog Dr Polle" />
+        </div>
+        <span class="blog__card-cat">Catégorie</span>
+        <img class="blog__line96" src="assets/images/Line 96.png" alt="" aria-hidden="true" />
+        <div class="blog__card-body">
+          <p class="blog__card-date">Publié le 3 avril 2021</p>
+          <h3 class="blog__card-title">Titre de l'article sur une ligne</h3>
+          <p class="blog__card-text">Adipiscing suscipit sociis duis nulla. Augue adipiscing cursus vel duis viverra blandit. Convallis molestie morbi porta felis [...]</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Dots carousel (mobile uniquement) -->
+    <div class="blog__dots" aria-hidden="true">
+      <span class="blog__dot blog__dot--active"></span>
+      <span class="blog__dot"></span>
+      <span class="blog__dot"></span>
+    </div>
+
+  </section>
+
+  <!-- SECTION DISCUTONS ENSEMBLE — COMMENTAIRES -->
+  <section class="comments">
+
+    <h2 class="comments__title">Discutons ensemble&nbsp;!</h2>
+    <span class="comments__sep" aria-hidden="true"></span>
+
+    <div class="comments__list">
+
+      <!-- Commentaire 1 — Marie -->
+      <div class="comments__card">
+        <span class="comments__avatar" aria-hidden="true"></span>
+        <div class="comments__content">
+          <div class="comments__meta">
+            <span class="comments__author">Marie</span>
+            <span class="comments__date">Publié le 04 Octobre 2020</span>
+            <span class="comments__reply">RÉPONDRE</span>
+          </div>
+          <p class="comments__body">Bonjour, lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat neque egestas adipiscing faucibus dignissim mauris. Vitae, et, urna, eu sit sagittis.<br>molestie. Gravida enim, egestas quis nunc suspendisse sem. Condimentum aliquam massa netus sit in egestas</p>
+        </div>
+      </div>
+
+      <!-- Commentaire 2 — Dr Polle (réponse indentée) -->
+      <div class="comments__card comments__card--reply">
+        <span class="comments__avatar" aria-hidden="true"></span>
+        <div class="comments__content">
+          <div class="comments__meta">
+            <span class="comments__author">Dr Polle</span>
+            <span class="comments__date">Publié le 04 Octobre 2020</span>
+            <span class="comments__reply">RÉPONDRE</span>
+          </div>
+          <p class="comments__body">Bonjour, lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat neque egestas adipiscing faucibus dignissim mauris. Vitae, et, urna, eu sit sagittis, molestie. Gravida enim, egestas quis nunc suspendisse sem. Condimentum aliquam massa netus sit in egestas.</p>
+        </div>
+      </div>
+
+      <!-- Commentaire 3 — Marie -->
+      <div class="comments__card">
+        <span class="comments__avatar" aria-hidden="true"></span>
+        <div class="comments__content">
+          <div class="comments__meta">
+            <span class="comments__author">Marie</span>
+            <span class="comments__date">Publié le 04 Octobre 2020</span>
+            <span class="comments__reply">RÉPONDRE</span>
+          </div>
+          <p class="comments__body">Bonjour, lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat neque egestas adipiscing faucibus dignissim mauris. Vitae, et, urna, eu sit sagittis, molestie. Gravida enim, egestas quis nunc suspendisse sem. Condimentum aliquam massa netus sit in egestas.</p>
+        </div>
+      </div>
+
+      <!-- Commentaire 4 — Dr Polle (réponse indentée + faded) -->
+      <div class="comments__card comments__card--reply">
+        <span class="comments__avatar" aria-hidden="true"></span>
+        <div class="comments__content">
+          <div class="comments__meta">
+            <span class="comments__author">Dr Polle</span>
+            <span class="comments__date">Publié le 04 Octobre 2020</span>
+            <span class="comments__reply">RÉPONDRE</span>
+          </div>
+          <p class="comments__body">Bonjour, lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat neque egestas adipiscing faucibus dignissim mauris. Vitae, et, urna, eu sit sagittis, molestie. Gravida enim, egestas quis nunc suspendisse sem. Condimentum aliquam massa netus sit in egestas.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="comments__more" href="#">Voir + de commentaires</a>
+
+  </section>
+
+  <!-- FORMULAIRE COMMENTAIRE -->
+  <section class="commentform">
+    <img class="commentform__deco" src="assets/images/Group%20946.png" alt="" aria-hidden="true" />
+    <h3 class="commentform__title">Laissez votre commentaire</h3>
+    <form class="commentform__form" action="/commentaires" method="post">
+      <label class="commentform__label-comment" for="commentform-comment">Commentaire</label>
+      <input class="commentform__input-comment" id="commentform-comment" name="comment" type="text" placeholder="Je commence à taper mon commentaire !" />
+      <label class="sr-only" for="commentform-nom">Nom</label>
+      <input class="commentform__input-nom" id="commentform-nom" name="nom" type="text" placeholder="Nom" />
+      <button class="commentform__submit" type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <!-- Adresse -->
+    <address class="footer__address">
+      <img src="assets/images/adresse.png" alt="" aria-hidden="true" />
+      950 Rue De La Haie 76230 Bois Guillaume
+    </address>
+
+    <!-- Téléphone -->
+    <a class="footer__phone" href="tel:0235595947">
+      <img src="assets/images/tel.png" alt="" aria-hidden="true" />
+      02 35 59 59 47
+    </a>
+
+    <!-- Logo (identique au header) -->
+    <div class="footer__logo">
+      <div class="footer__logo-mark header__logo-build">
+        <img class="header__logo-letter header__logo-letter--i" src="assets/images/I.png" alt="I" />
+        <img class="header__logo-letter header__logo-letter--plus" src="assets/images/+.png" alt="" aria-hidden="true" />
+        <img class="header__logo-letter header__logo-letter--gcp" src="assets/images/GCP.png" alt="GCP" />
+        <img class="header__logo-letter header__logo-letter--c2" src="assets/images/C2.png" alt="" aria-hidden="true" />
+        <img class="header__logo-letter header__logo-letter--traitv" src="assets/images/TRAITV.png" alt="" aria-hidden="true" />
+        <img class="header__logo-letter header__logo-letter--d" src="assets/images/D2.png" alt="D" />
+        <img class="header__logo-letter header__logo-letter--r" src="assets/images/R.png" alt="R" />
+        <img class="header__logo-letter header__logo-letter--red" src="assets/images/RED.png" alt="" aria-hidden="true" />
+        <img class="header__logo-letter header__logo-letter--p" src="assets/images/P2.png" alt="P" />
+        <img class="header__logo-letter header__logo-letter--o" src="assets/images/O2.png" alt="O" />
+        <img class="header__logo-letter header__logo-letter--l1" src="assets/images/L2.png" alt="L" />
+        <img class="header__logo-letter header__logo-letter--l2" src="assets/images/L2.png" alt="L" />
+        <img class="header__logo-letter header__logo-letter--e" src="assets/images/E2.png" alt="E" />
+        <img class="header__logo-trait" src="assets/images/trait_logo.png" alt="" aria-hidden="true" />
+      </div>
+      <div class="footer__tagline-mark header__tagline">
+        <img class="header__tagline-letter" style="left:80.3px; top:69.07px; width:2.71px; height:15.40px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:87.12px; top:69.07px; width:13.42px; height:15.40px" src="assets/images/N.png" alt="N" />
+        <img class="header__tagline-letter" style="left:103.47px; top:68.86px; width:11.93px; height:15.83px" src="assets/images/S.png" alt="S" />
+        <img class="header__tagline-letter" style="left:117.18px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:132.7px; top:69.07px; width:2.70px; height:15.40px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:138.42px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:153.54px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+        <img class="header__tagline-letter" style="left:169.34px; top:69.07px; width:12.50px; height:15.40px" src="assets/images/T.png" alt="T" />
+        <img class="header__tagline-letter" style="left:191.31px; top:69.07px; width:13.93px; height:15.40px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:208.28px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+        <img class="header__tagline-letter" style="left:231.1px; top:68.8px; width:14.43px; height:15.93px" src="assets/images/G.png" alt="G" />
+        <img class="header__tagline-letter" style="left:249.02px; top:69.07px; width:11.53px; height:15.40px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:263.77px; top:69.07px; width:13.44px; height:15.40px" src="assets/images/N.png" alt="N" />
+        <img class="header__tagline-letter" style="left:280.49px; top:68.8px; width:16.11px; height:15.93px" src="assets/images/O.png" alt="O" />
+        <img class="header__tagline-letter" style="left:299.64px; top:69.07px; width:13.19px; height:15.65px" src="assets/images/U.png" alt="U" />
+
+        <img class="header__tagline-letter" style="left:38.8px; top:92.38px; width:13.93px; height:15.41px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:56.01px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:77.35px; top:92.38px; width:10.82px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:89.66px; top:92.28px; width:16.07px; height:15.52px" src="assets/images/A.png" alt="A" />
+
+        <img class="header__tagline-letter" style="left:114.29px; top:92.13px; width:14.08px; height:15.93px" src="assets/images/C.png" alt="C" />
+        <img class="header__tagline-letter" style="left:131.22px; top:92.38px; width:12.76px; height:15.42px" src="assets/images/H.png" alt="H" />
+        <img class="header__tagline-letter" style="left:147.94px; top:92.38px; width:11.52px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:161.37px; top:92.38px; width:15.19px; height:15.51px" src="assets/images/V.png" alt="V" />
+        <img class="header__tagline-letter" style="left:179.34px; top:92.38px; width:2.70px; height:15.41px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:186.19px; top:92.38px; width:10.81px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:199.79px; top:92.38px; width:10.81px; height:15.41px" src="assets/images/L.png" alt="L" />
+        <img class="header__tagline-letter" style="left:213.42px; top:92.38px; width:11.55px; height:15.41px" src="assets/images/E.png" alt="E" />
+
+        <img class="header__tagline-letter" style="left:234.76px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:248.42px; top:92.38px; width:12.50px; height:15.41px" src="assets/images/T.png" alt="T" />
+
+        <img class="header__tagline-letter" style="left:270.38px; top:92.38px; width:13.93px; height:15.41px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:287.34px; top:92.38px; width:13.20px; height:15.65px" src="assets/images/U.png" alt="U" />
+
+        <img class="header__tagline-letter" style="left:310.85px; top:92.38px; width:11.94px; height:15.42px" src="assets/images/P.png" alt="P" />
+        <img class="header__tagline-letter" style="left:325.71px; top:92.38px; width:2.70px; height:15.41px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:332.53px; top:92.38px; width:11.53px; height:15.41px" src="assets/images/E.png" alt="E" />
+        <img class="header__tagline-letter" style="left:347.27px; top:92.38px; width:13.94px; height:15.41px" src="assets/images/D.png" alt="D" />
+
+        <img class="header__tagline-letter" style="left:156.38px; top:116.60px; width:7.82px; height:9.24px" src="assets/images/N1.png" alt="N" />
+        <img class="header__tagline-letter" style="left:166.4px; top:116.44px; width:9.43px; height:9.63px" src="assets/images/O1.png" alt="O" />
+        <img class="header__tagline-letter" style="left:178.04px; top:116.60px; width:7.65px; height:9.24px" src="assets/images/R1.png" alt="R" />
+        <img class="header__tagline-letter" style="left:187.59px; top:116.60px; width:8.85px; height:9.24px" src="assets/images/M1.png" alt="M" />
+        <img class="header__tagline-letter" style="left:198.27px; top:116.53px; width:9.40px; height:9.31px" src="assets/images/A1.png" alt="A" />
+        <img class="header__tagline-letter" style="left:209.48px; top:116.60px; width:7.82px; height:9.24px" src="assets/images/N1.png" alt="N" />
+        <img class="header__tagline-letter" style="left:219.3px; top:116.6px; width:8.35px; height:9.24px" src="assets/images/D.png" alt="D" />
+        <img class="header__tagline-letter" style="left:229.65px; top:116.6px; width:1.62px; height:9.24px" src="assets/images/I.png" alt="I" />
+        <img class="header__tagline-letter" style="left:233.27px; top:116.6px; width:6.91px; height:9.24px" src="assets/images/E.png" alt="E" />
+      </div>
+    </div>
+
+    <!-- Bouton Nous contacter -->
+    <a class="footer__contact" href="/contact"><span class="footer__contact-text">Nous contacter</span></a>
+    <!-- Vector 6 — trait rouge à droite du bouton NOUS CONTACTER -->
+    <span class="footer__vector6" aria-hidden="true"></span>
+
+    <!-- Retour haut de page -->
+    <button class="footer__backtop" aria-label="Retour en haut de page" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polyline points="4,13 10,6 16,13" stroke="#B40400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <!-- Barre de nav rouge -->
+    <nav class="footer__nav" aria-label="Navigation footer">
+      <div class="footer__nav-track">
+        <a class="footer__nav-item" href="#">Dr Polle</a>
+        <a class="footer__nav-item" href="#">Pathologies</a>
+        <a class="footer__nav-item" href="#">Chirurgies</a>
+        <a class="footer__nav-item" href="#">Injections et infiltrations</a>
+        <a class="footer__nav-item" href="#">Parcours patient</a>
+        <a class="footer__nav-item" href="#">Protocoles soins post-opératoire</a>
+        <a class="footer__nav-item" href="#">Blog</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Dr Polle</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Pathologies</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Chirurgies</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Injections et infiltrations</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Parcours patient</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Protocoles soins post-opératoire</a>
+        <a class="footer__nav-item" href="#" aria-hidden="true">Blog</a>
+      </div>
+    </nav>
+
+
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

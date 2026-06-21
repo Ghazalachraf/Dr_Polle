@@ -1,0 +1,225 @@
+@use '../abstracts/variables' as *;
+
+// Section top Figma ≈ 8332px (après comments 7380+952)
+// Positions relatives = Figma top − 8332
+
+.commentform {
+  position: relative;
+  background-color: $color-black;
+  width: 100%;
+  min-height: 377px;
+
+  // ── Group 946 — déco "+" rouge top-left ──────────────────
+  // Figma: top 8348 → 16px, left 83px, 35×35px
+  &__deco {
+    position: absolute;
+    top: 36px;
+    left: 83px;
+    width: 35px;
+    height: 35px;
+    pointer-events: none;
+  }
+
+  // ── Titre ────────────────────────────────────────────────
+  // Figma: top 8348 → 8348 − 8332 = 16px, left 135px
+  &__title {
+    position: absolute;
+    top: 56px;
+    left: 135px;
+    width: 592px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: $color-white;
+    margin: 0;
+  }
+
+  // ── Label "Commentaire" ───────────────────────────────────
+  // Figma: top 8422 → 90px, left 100px, Gilroy 300, 12px, 3% ls, #DEDEDE
+  &__label-comment {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: #DEDEDE;
+  }
+
+  // ── Input commentaire ─────────────────────────────────────
+  // Figma: top 8442 → 110px, left 100px, width 1237px, Gilroy 300, 15px, #FFFFFF
+  // Border bottom à 8467 → 135px
+  &__input-comment {
+    position: absolute;
+    top: 130px;
+    left: 100px;
+    width: 1237px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $color-white;
+    padding: 0 0 8px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;
+    line-height: 1;
+    color: $color-white;
+    outline: none;
+
+    &::placeholder {
+      color: $color-white;
+      opacity: 0.7;
+    }
+  }
+
+  // ── Input Nom ────────────────────────────────────────────
+  // Figma: top 8495 → 163px, left 100px, Gilroy 300, 15px, 3% ls, #FFFFFF
+  &__input-nom {
+    position: absolute;
+    top: 183px;
+    left: 100px;
+    width: 1237px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $color-white;
+    padding: 0 0 8px;
+    font-family: $font-primary;
+    font-weight: $fw-light;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $color-white;
+    outline: none;
+
+    &::placeholder {
+      color: $color-white;
+      opacity: 0.7;
+    }
+  }
+
+  // ── Bouton Envoyer ────────────────────────────────────────
+  // Figma: top 8555 → 223px, left 1226px, 114×38px, radius 50px, Gilroy 800, 14px, blanc
+  &__submit {
+    position: absolute;
+    top: 242px;
+    left: 1226px;
+    width: 114px;
+    height: 38px;
+    background-color: $color-red;
+    border: none;
+    border-radius: 50px;
+    font-family: $font-primary;
+    font-weight: $fw-extrabold;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: center;
+    color: $color-white;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+
+    &:hover { background-color: #8E0300; }
+  }
+
+  // ── Tablette ──────────────────────────────────────────────
+  @media (max-width: $bp-tablet) {
+    min-height: auto;
+    padding: 40px 32px 50px;
+
+    &__deco { display: none; }
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 22px;
+    }
+
+    &__label-comment {
+      position: relative;
+      top: auto; left: auto;
+      display: block;
+      margin-top: 30px;
+      color: $color-red;
+    }
+
+    &__input-comment {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      margin-top: 8px;
+      display: block;
+    }
+
+    &__input-nom {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      margin-top: 30px;
+      display: block;
+    }
+
+    &__submit {
+      position: relative;
+      top: auto; left: auto;
+      margin-top: 24px;
+      margin-left: auto;
+      display: block;
+      height: 44px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────
+  @media (max-width: $bp-mobile) {
+    min-height: auto;
+    padding: 30px 24px 40px;
+
+    &__deco { display: none; }
+
+    &__title {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      font-size: 20px;
+    }
+
+    &__label-comment {
+      position: relative;
+      top: auto; left: auto;
+      display: block;
+      margin-top: 24px;
+      color: $color-red;
+      font-size: 13px;
+    }
+
+    &__input-comment {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      margin-top: 8px;
+      display: block;
+    }
+
+    &__input-nom {
+      position: relative;
+      top: auto; left: auto;
+      width: 100%;
+      margin-top: 30px;
+      display: block;
+    }
+
+    &__submit {
+      position: relative;
+      top: auto; left: auto;
+      width: auto;
+      min-width: 120px;
+      margin-top: 24px;
+      margin-left: auto;
+      display: block;
+      height: 44px;
+      padding: 0 28px;
+    }
+  }
+}
