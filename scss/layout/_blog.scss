@@ -9,6 +9,9 @@
   width: 100%;
   min-height: 789px;   // grid top 289px + card 440px + marge
 
+  // Desktop : masquer les dots (réactivés en mobile plus bas)
+  &__dots { display: none; }
+
   // ── H2 ──────────────────────────────────────────────────
   // Figma: top 6682px → 6682 − 6630 = 52px
   &__title {
@@ -269,29 +272,38 @@
   // ── Mobile ────────────────────────────────────────────────
   @media (max-width: $bp-mobile) {
     min-height: auto;
+    margin-top: -98px;
+    position: relative;
+    z-index: 7;
     padding: 40px 0 40px;
 
     &__title {
       position: relative;
-      top: auto; left: auto;
-      width: 100%;
+      top: -16px; left: auto;
+      width: 334px;
+      max-width: 100%;
+      height: 72px;
+      margin: 0 auto;
       font-size: 36px;
-      line-height: 1.2;
-      padding: 0 24px;
+      line-height: 36px;
+      letter-spacing: 0;
+      text-align: center;
+      padding: 0;
     }
 
     &__intro {
       position: relative;
-      top: auto; left: auto;
-      width: 100%;
-      padding: 16px 24px 0;
-    }
-
-    &__link {
-      position: relative;
-      top: auto; left: auto;
-      display: block;
-      padding: 12px 24px 0;
+      top: -14px; left: auto;
+      width: 334px;
+      max-width: 100%;
+      height: 210px;
+      margin: 0 auto;
+      font-weight: $fw-light;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+      text-align: center;
+      padding: 16px 0 0;
     }
 
     &__line97 { display: none; }
@@ -300,9 +312,9 @@
       position: relative;
       top: auto; left: auto;
       flex-direction: row;
-      padding: 0 24px;
+      padding: 0;
       margin-top: 24px;
-      gap: 12px;
+      gap: 0;
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -312,38 +324,112 @@
     }
 
     &__card {
-      width: 85%;
+      width: 100%;
       min-height: auto;
       flex-shrink: 0;
       scroll-snap-align: start;
     }
 
-    &__card-img-wrap { height: 220px; }
+    &__card-img-wrap {
+      position: relative;
+      top: 13px;
+      width: 415px;
+      max-width: 100%;
+      height: 259px;
+    }
+
+    &__card-date {
+      position: relative;
+      top: 24px;
+    }
+
+    &__card-cat {
+      top: 12px;
+    }
+
+    &__card-title {
+      position: relative;
+      top: 31px;
+    }
+
+    &__card-text {
+      position: relative;
+      left: -13px;
+      top: 30px;
+      width: 375px;
+      max-width: 100%;
+      height: 90px;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+
+    &__card-read {
+      position: relative;
+      left: -13px;
+      top: 29px;
+      width: auto;
+      height: 25px;
+      white-space: nowrap;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: 0.05em;
+    }
+
+    &__line96 { display: none; }
 
     &__dots {
       display: flex;
+      align-items: center;
       justify-content: center;
       gap: 8px;
+      position: relative;
+      top: -12px;
       margin-top: 16px;
     }
 
     &__dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.3);
-      transition: background-color 0.3s ease;
+      background-color: $color-red;
+      transition: all 0.3s ease;
 
-      &--active { background-color: $color-red; }
+      &--active {
+        width: 16px;
+        height: 16px;
+        background-color: $color-red;
+        border: 2px solid $color-red;
+        box-shadow: 0 0 0 2px $color-black, 0 0 0 3px $color-red;
+      }
     }
 
     &__link {
-      display: block;
+      display: inline-block;
+      position: relative;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      white-space: nowrap;
       text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.10em;
       margin-top: 20px;
-      padding: 0 24px;
+      padding-bottom: 4px;
+      border-bottom: none;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 263px;
+        height: 0;
+        border-bottom: 2px solid $color-red;
+      }
     }
   }
 }
-
-.blog__dots { display: none; }

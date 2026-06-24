@@ -11,6 +11,11 @@
   margin-top: -165px;
   overflow: visible;
 
+  // Desktop : masquer les dots (réactivés en mobile plus bas)
+  &__dots {
+    display: none;
+  }
+
   // ── Déco fil de fer (top-right, opacity 10%) ─────────────
   // Figma: Group 8 — 274.79×837px, left 1150px, rotation -180°, opacity 10%
   &__deco {
@@ -292,15 +297,46 @@
 
   // ── Mobile ────────────────────────────────────────────────
   @media (max-width: $bp-mobile) {
-    min-height: auto;
-    margin-top: 0;
+    width: 413px;
+    max-width: 100%;
+    min-height: 777px;
+    margin-top: -56px;
+    position: relative;
+    z-index: 5;
     padding: 50px 0 40px;
 
     &__deco { display: none; }
 
+    &__card-overlay {
+      padding: 24px 20px 16px;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    &__card-title {
+      top: 0;
+      left: 0;
+      font-size: 19px;
+    }
+
+    &__card-text {
+      margin: 0;
+      width: 100%;
+
+      & + & {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+
+    &__card-link {
+      top: 0;
+      margin-top: auto;
+    }
+
     &__title {
       position: relative;
-      top: auto;
+      top: -28px;
       left: auto;
       width: 100%;
       font-size: 36px;
@@ -311,17 +347,24 @@
 
     &__subtitle {
       position: relative;
-      top: auto;
+      top: -27px;
       left: auto;
-      width: 100%;
-      padding: 16px 24px 0;
+      width: 373px;
+      max-width: none;
+      height: 180px;
+      font-weight: $fw-light;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+      padding: 16px 0 0;
       text-align: center;
+      margin: 0 auto;
     }
 
     &__cta {
       position: relative;
-      top: auto;
-      left: auto;
+      top: -6px;
+      left: 2px;
       justify-content: center;
       margin: 20px auto 0;
     }
@@ -345,31 +388,57 @@
     }
 
     &__card {
-      width: 85% !important;
-      height: 340px;
+      width: 345px !important;
+      height: 355px;
+      padding: 30px 30px 0;
       flex: none;
       flex-shrink: 0;
       scroll-snap-align: start;
       margin-right: 12px;
     }
 
+    &__card--genou {
+      position: relative;
+      left: 77px;
+      top: -26px;
+    }
+
+    &__card--cheville {
+      position: relative;
+      left: 86px;
+      top: -25px;
+    }
+
+    &__card--pied {
+      position: relative;
+      left: 80px;
+      top: -25px;
+    }
+
     &__dots {
       display: flex;
+      align-items: center;
       justify-content: center;
       gap: 8px;
+      position: relative;
+      top: -21px;
       margin-top: 16px;
       padding-bottom: 10px;
     }
 
     &__dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background-color: rgba(0, 0, 0, 0.25);
-      transition: background-color 0.3s ease;
+      background-color: $color-red;
+      transition: all 0.3s ease;
 
       &--active {
+        width: 16px;
+        height: 16px;
         background-color: $color-red;
+        border: 2px solid $color-red;
+        box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-red;
       }
     }
   }
@@ -398,9 +467,4 @@
       margin: 0 auto 0;
     }
   }
-}
-
-// Desktop : masquer les dots
-.pathologies__dots {
-  display: none;
 }

@@ -8,6 +8,11 @@
   padding-bottom: 80px;
   overflow: hidden;
 
+  // Desktop : masquer les dots (réactivés en mobile plus bas)
+  &__dots {
+    display: none;
+  }
+
   // ── Déco gauche (Vector@2x / carré rouge) ───────────────
   &__deco {
     position: absolute;
@@ -63,6 +68,10 @@
 
     &--light {
       font-weight: $fw-light;
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 
@@ -128,14 +137,6 @@
     &:hover .chirurgies__card-label {
       opacity: 0;
     }
-  }
-
-  // TEMP — force l'état hover sur la carte "pied" pour calage Pixel Perfect
-  // À retirer une fois les ajustements terminés
-  &__card--pied {
-    .chirurgies__card-overlay { opacity: 1 !important; }
-    .chirurgies__card-label { opacity: 0 !important; }
-    .chirurgies__card-plus { opacity: 1 !important; }
   }
 
   &__card-clip {
@@ -356,27 +357,74 @@
   // ── Mobile ────────────────────────────────────────────────
   @media (max-width: $bp-mobile) {
     margin-top: 0;
+    width: 414px;
+    max-width: 100%;
+    height: 813px;
     padding-bottom: 40px;
 
     &__deco,
     &__deco-cross,
     &__line { display: none; }
 
+    &__card-gradient { display: none; }
+
+    &__card-overlay {
+      padding: 24px 20px 16px;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    &__card-title {
+      top: 0;
+      left: 0;
+      font-size: 19px;
+      margin: 0;
+    }
+
+    &__card-text {
+      top: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    &__card-link {
+      top: 0;
+      left: 0;
+      margin: auto auto 0;
+    }
+
     &__title {
-      padding-top: 50px;
-      padding-left: 24px;
+      padding-top: 25px;
+      padding-left: 99px;
       font-size: 36px;
     }
 
-    &__subtitle {
-      margin-top: 16px;
-      margin-left: 24px;
-      width: calc(100% - 48px);
+    &__title-last {
+      position: relative;
+      left: 11px;
+    }
+
+    &__subtitle--desktop {
+      display: none;
+    }
+
+    &__subtitle--mobile {
+      display: block;
+      margin-top: 19px;
+      margin-left: 30px;
+      width: 374px;
+      max-width: calc(100% - 48px);
+      height: 180px;
+      font-weight: $fw-light;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+      text-align: center;
     }
 
     &__cta {
-      margin-top: 20px;
-      margin-left: 24px;
+      margin-top: 24px;
+      margin-left: 104px;
     }
 
     &__grid {
@@ -395,35 +443,84 @@
     }
 
     &__card {
-      width: 85% !important;
-      height: 380px !important;
+      width: 390px !important;
+      height: 410px !important;
+      padding: 30px 30px 0;
       flex-shrink: 0;
       scroll-snap-align: start;
+      box-shadow: none;
+    }
+
+    &__card--genou {
+      position: relative;
+      width: 360px !important;
+      height: 355px !important;
+      padding: 30px 30px 0;
+      left: -6px;
+      top: -46px;
+    }
+
+    &__card--cheville {
+      position: relative;
+      width: 360px !important;
+      height: 355px !important;
+      padding: 30px 30px 0;
+      left: -53px;
+      top: -46px;
+    }
+
+    &__card--pied {
+      position: relative;
+      width: 360px !important;
+      height: 355px !important;
+      padding: 30px 30px 0;
+      left: -46px;
+      top: -34px;
+    }
+
+    &__card-label {
+      bottom: 4px;
+      left: 50%;
+      width: 100%;
+      max-width: calc(100% - 20px);
+      height: 28px;
+      font-size: 19px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      transform: translateX(-50%);
+      color: $color-black;
+
+      &::after {
+        margin: 6px auto 0;
+      }
     }
 
     &__dots {
       display: flex;
+      align-items: center;
       justify-content: center;
       gap: 8px;
+      position: relative;
+      left: 10px;
+      top: -11px;
       margin-top: 16px;
       padding-bottom: 10px;
     }
 
     &__dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.35);
-      transition: background-color 0.3s ease;
+      background-color: $color-red;
+      transition: all 0.3s ease;
 
       &--active {
+        width: 16px;
+        height: 16px;
         background-color: $color-red;
+        border: 2px solid $color-red;
+        box-shadow: 0 0 0 2px $color-black, 0 0 0 3px $color-red;
       }
     }
   }
-}
-
-// Desktop : masquer les dots
-.chirurgies__dots {
-  display: none;
 }

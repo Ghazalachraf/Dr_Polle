@@ -52,19 +52,29 @@
 
   // ── Mobile ────────────────────────────────────────────────
   @media (max-width: $bp-mobile) {
-    margin-top: 30px;
-    padding: 0 24px;
+    margin-top: -17px;
+    width: 414px;
+    max-width: 100%;
+    height: 325px;
+    padding: 0 20px;
 
     &__inner {
       width: 100%;
       height: auto;
+      gap: 10px;
       padding: 30px 0;
     }
 
     &__text {
-      font-size: 16px;
-      line-height: 28px;
-      letter-spacing: 0.06em;
+      position: relative;
+      top: -3px;
+      width: 370px;
+      max-width: none;
+      flex-shrink: 0;
+      height: 273px;
+      font-size: 25px;
+      line-height: 39px;
+      letter-spacing: 0.10em;
     }
   }
 }

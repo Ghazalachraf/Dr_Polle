@@ -189,6 +189,13 @@
     z-index: 2;
   }
 
+  &__cta-intro {
+    display: none;
+    align-items: center;
+    color: $color-white;
+    text-decoration: none;
+  }
+
   &__cta-circle {
     width: 65px;
     height: 65px;
@@ -300,32 +307,70 @@
 
   // ── Mobile ────────────────────────────────────────────────
   @media (max-width: $bp-mobile) {
+    width: 414px;
+    max-width: 100%;
     min-height: auto;
+    gap: 10px;
+    margin-top: -106px;
+    z-index: 4;
     overflow: visible;
-    padding: 0 0 40px;
+    padding: 0 0 24px;
     display: flex;
     flex-direction: column;
+
+    &__title-first {
+      display: inline-block;
+      position: relative;
+      left: 20px;
+      top: -26px;
+    }
+
+    &__title-last {
+      display: inline-block;
+      position: relative;
+      left: 20px;
+      top: -21px;
+    }
 
     &__title {
       order: 1;
       position: relative !important;
       top: auto !important;
       left: auto !important;
-      width: 100%;
-      font-size: 70px;
-      line-height: 70px;
+      width: 374px;
+      max-width: 100%;
+      height: 77px;
+      font-size: 36px;
+      line-height: 36px;
       letter-spacing: 0;
+      text-align: center;
       padding: 50px 23px 0;
     }
 
     &__intro {
       order: 2;
       position: relative !important;
-      top: auto !important;
-      left: auto !important;
+      top: 4px !important;
+      left: 1px !important;
       width: 100%;
+      height: 180px;
+      font-weight: $fw-light;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+      text-align: center;
       padding: 0 22px;
       margin-top: 28px;
+    }
+
+    &__cta-intro {
+      order: 3;
+      display: flex;
+      position: relative;
+      left: 2px;
+      top: -5px;
+      justify-content: center;
+      margin: 24px auto 0;
     }
 
     &__media {
@@ -347,37 +392,107 @@
 
     &__item {
       width: 100%;
+      padding: 16px 6px;
       margin-bottom: 10px;
       opacity: 1;
     }
 
+    &__item:first-child &__item-title {
+      position: relative;
+      left: -10px;
+      top: -41px;
+    }
+
+    &__item:nth-child(2) &__item-title {
+      position: relative;
+      left: -10px;
+      top: -22px;
+    }
+
+    &__item:nth-child(2) &__item-text {
+      position: relative;
+      left: -10px;
+      top: -17px;
+    }
+
+    &__item:nth-child(2) &__item-link {
+      position: relative;
+      left: -10px;
+      top: -17px;
+    }
+
+    &__item:nth-child(2) &__item-img {
+      position: relative;
+      left: 4px;
+      margin-top: 9px;
+    }
+
+    &__item:nth-child(3) &__item-title {
+      position: relative;
+      left: -11px;
+      top: -21px;
+    }
+
+    &__item:nth-child(3) &__item-text {
+      position: relative;
+      left: -12px;
+      top: -17px;
+    }
+
+    &__item:nth-child(3) &__item-link {
+      position: relative;
+      left: -11px;
+      top: -18px;
+    }
+
+    &__item:nth-child(3) &__item-img {
+      margin-top: 9px;
+    }
+
+    &__item-text {
+      position: relative;
+      left: -9px;
+      top: -35px;
+      width: 354px;
+      max-width: none;
+      height: 150px;
+    }
+
     &__item-link {
-      display: block;
+      display: inline-block;
+      position: relative;
+      left: -9px;
+      top: -37px;
+      width: auto;
+      height: 25px;
+      white-space: nowrap;
       font-family: $font-primary;
       font-weight: $fw-extrabold;
-      font-size: 13px;
+      font-size: 16px;
+      line-height: 25px;
       letter-spacing: 0.10em;
+      text-align: center;
+      vertical-align: middle;
       text-transform: uppercase;
       color: $color-white;
-      text-decoration: underline;
-      margin-top: 12px;
+      text-decoration: none;
+      margin-top: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid $color-red;
     }
 
     &__item-img {
       display: block;
-      width: 100%;
-      height: 220px;
+      width: 374px;
+      max-width: 100%;
+      height: 317px;
       object-fit: cover;
-      margin-top: 20px;
+      margin-top: -10px;
       margin-bottom: 30px;
     }
 
     &__cta {
-      order: 5;
-      position: relative;
-      top: auto;
-      left: auto;
-      margin: 20px 24px 0;
+      display: none;
     }
   }
 }

@@ -324,27 +324,20 @@
 
     &__icon-menu {
       width: 34px;
-      height: 34px;
+      height: 33px;
     }
 
     &__phone { display: none; }
 
-    // Logo centré
+    // Logo centré (échelle réduite du logo desktop 400×55.18 → ~183×24)
     &__logo {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(calc(-50% + 9px), -50%);
-      width: 183px;
+      width: 400px;
+      height: 55.18px;
       display: block;
-    }
-
-    &__logo-img {
-      width: 183px;
-      height: 24px;
-      max-width: none;
-      border-bottom: none;
-      object-fit: contain;
+      transform: translate(calc(-50% + 4px), -50%) scale(0.4577);
     }
 
     &__tagline { display: none; }

@@ -98,3 +98,13 @@
 
   grid.addEventListener('scroll', updateDots, { passive: true });
 })();
+
+// ── Footer : retour en haut de page ──────────────────────────
+(function () {
+  const btn = document.getElementById('footer-backtop');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();

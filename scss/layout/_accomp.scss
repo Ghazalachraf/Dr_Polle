@@ -102,6 +102,10 @@
     height: 462px;         // Figma: 462px
     flex-shrink: 0;
     object-fit: cover;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   // ── Tablette ──────────────────────────────────────────────
@@ -142,13 +146,59 @@
       width: 100%;
     }
 
-    &__title { font-size: 28px; line-height: 1.2; }
+    &__title {
+      position: relative;
+      left: -3px;
+      top: -55px;
+      width: 373px;
+      max-width: 100%;
+      height: 135px;
+      font-size: 40px;
+      line-height: 45px;
+      letter-spacing: 0;
+    }
+
+    &__subtitle {
+      position: relative;
+      left: -4px;
+      top: -56px;
+      width: 373px;
+      max-width: 100%;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+
+    &__text {
+      position: relative;
+      left: -2px;
+      top: -55px;
+      width: 373px;
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+
+    &__cta {
+      position: relative;
+      left: -4px;
+      top: -53px;
+    }
 
     &__image {
+      display: none;
+    }
+
+    &__image--mobile {
+      display: block;
+      position: relative;
       margin-left: 0;
-      margin-top: 30px;
-      width: 100%;
-      height: 240px;
+      margin-top: -17px;
+      width: 373px;
+      max-width: 100%;
+      height: 480px;
+      object-fit: cover;
     }
   }
 }
